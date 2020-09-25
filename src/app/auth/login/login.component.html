@@ -1,0 +1,82 @@
+<aside class="col-md-5 mx-auto mt-5">
+  <div class="card">
+    <article class="card-body">
+      <p class="text-center">
+        <img
+          class="text-center"
+          src="/assets/img/logo.png"
+          width="200"
+          height="80"
+          alt="NUTRARIAS"
+        />
+      </p>
+      <hr />
+
+      <h4 class="card-title mb-3 mt-1 text-center">Inicia Sesión con</h4>
+
+      <button
+        class="btn btn-outline-dark btn-block mt-1 mb-2"
+        (click)="onGoogleLogin()"
+      >
+        <div class="text-center mt-1 mb-1">
+          <img
+            width="20px"
+            class="ml-1"
+            alt="Google sign-in"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+          />
+
+          &nbsp; Inicia Sesión con <b>Google</b>
+        </div>
+      </button>
+      <br />
+      <h5 class="card-title mb-3 mt-3 text-center">O si lo prefieres</h5>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="form-group">
+          <label>Introduce tu correo electrónico</label>
+          <input
+            name="correoelectronico"
+            class="form-control"
+            placeholder="Correo electrónico"
+            type="email"
+            formControlName="email"
+          />
+        </div>
+        <!-- form-group// contraseña-->
+        <div class="form-group">
+          <label>Contraseña</label>
+          <input
+            class="form-control"
+            placeholder="*********"
+            type="password"
+            formControlName="password"
+          />
+        </div>
+        <!-- form-group// Recordar contraseña -->
+        <div class="form-group">
+          <a
+            class=""
+            [routerLink]="['/forgot-password']"
+            title="Haz click aquí para restablecer tu contraseña"
+            >¿Olvidaste tu contraseña?
+          </a>
+        </div>
+        <!-- form-group// submit iniciar sesion -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Iniciar Sesión
+          </button>
+        </div>
+        <p class="text-center">
+          ¿Aún no tienes cuenta?&nbsp;
+          <a [routerLink]="['/register']" title="Regístrate ahora!">
+            Regístrate aquí</a
+          >
+        </p>
+        <!-- form-group// -->
+      </form>
+    </article>
+  </div>
+  <!-- card.// -->
+</aside>

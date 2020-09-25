@@ -1,0 +1,133 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+  <a class="navbar-item mr-2" href="/home">
+    <img
+      src="assets/img/logo_blanco.png"
+      width="130"
+      height="50"
+      alt="NUTRARIAS"
+      title="NUTRARIAS - Inicio"
+    />
+  </a>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarColor02"
+    aria-controls="navbarColor02"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <hr />
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          [routerLink]="['/home']"
+          >Inicio <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          [routerLink]="['/equipo']"
+          >Quienes somos</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          [routerLink]="['/metodo']"
+          >Nuestro Método</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="user$ | async as user">
+        <a
+          class="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          [routerLink]="['/blog']"
+          >Blog</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          [routerLink]="['/planes']"
+          >Elige tu Plan</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          [routerLink]="['/contacto']"
+        >
+          Contacto</a
+        >
+      </li>
+    </ul>
+
+    <div class="dropdown-divider"></div>
+    <div *ngIf="user$ | async as user; else login">
+      <ul class="nav mr-3 mb-1"></ul>
+      <ul class="nav justify-content-right mr-3 mb-1">
+        <!-- Show email de usuario + pedir cita + Cerrar Sesion si hay usuario logueado-->
+
+        <div class="dropdown-divider"></div>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            {{ user?.email }}</a
+          >
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              *ngIf="user"
+              [routerLink]="['/home']"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+              (click)="onLogout()"
+              >Cerrar Sesion</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+    <ng-template #login>
+      <!-- Show Inicia Sesion si no hay usuario logueado-->
+      <ul class="nav justify-content-right mr-3 mb-1">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          *ngIf="!user"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          [routerLink]="['/login']"
+        >
+          Inicia Sesión
+        </button>
+      </ul>
+    </ng-template>
+  </div>
+</nav>

@@ -1,0 +1,63 @@
+<div class="card mb-3">
+  <div
+    class="fondo-entrenamiento text-center"
+    style="width: 100%; height: 350px"
+  >
+    <div style="padding-top: 20%; padding-bottom: 25%">
+      <h1 class="display-4 text-white" style="font-size: 350%">
+        Área de Entrenamiento Personal
+      </h1>
+      <h4 class="card-title">Metodología de Trabajo</h4>
+    </div>
+  </div>
+  <div class="card-body">
+    <p class="lead card-text">
+      Nuestra oferta se centra en un trato personal, cercano y específico con el
+      cliente. Mantendremos un contacto continuo mediante los diferentes medios
+      disponibles: Skype, Zoom, WhatsApp y llamadas telefónicas. Trabajaremos
+      obteniendo un feedback constante durante todo el proceso.
+      <br />
+      <br />
+      Partiendo de esa base, ofrecemos planes de entrenamiento totalmente
+      personalizados y acorde a los objetivos y necesidades de cada persona.
+      Independientemente del objetivo por el que acudas a nosotros, nos
+      adaptaremos a tus capacidades físicas, limitaciones y dolencias, para en
+      primer lugar reducir o eliminar totalmente ese dolor y posteriormente
+      trabajar para mejorar el estado físico.
+      <br />
+      <br />
+      En cuanto a nuestra metodología de entrenamiento, abogamos por un tipo de
+      entrenamiento, orientado hacia la funcionalidad y transferencia a la
+      rutina diaria. Creemos en los beneficios obtenidos por la actividad
+      física, mejorando la calidad de vida y las capacidades individuales.
+    </p>
+  </div>
+  <p class="lead ml-4">Ofrecemos:</p>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a [routerLink]="['/planes']" fragment="entrenamientoSencillo">
+        Planificación y Rutina de Entrenamiento personalizada.</a
+      >
+    </li>
+    <li class="list-group-item">
+      <a [routerLink]="['/planes']" fragment="entrenamientoOnline"
+        >Entrenamientos personales online.</a
+      >
+    </li>
+    <li class="list-group-item">
+      <a [routerLink]="['/planes']" fragment="entrenamientoDomicilio">
+        Entrenamientos personales presenciales.</a
+      >
+      <br />
+      <em><small>(Solo Bilbao y alrededores)</small></em>
+    </li>
+  </ul>
+  <div class="card-body">
+    ¿Tienes alguna duda? ¿Necesitas más información?
+    <br />
+    <a [routerLink]="['/contacto']" fragment="areaNutricion" class="card-link"
+      >Ponte en contacto con nuestro entrenador personal</a
+    >
+  </div>
+  <div class="card-footer text-muted"></div>
+</div>

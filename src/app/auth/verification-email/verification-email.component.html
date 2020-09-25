@@ -1,0 +1,47 @@
+<aside
+  class="col-md-9 mx-auto mt-5"
+  *ngIf="user$ | async as user; else loading"
+>
+  <div class="card">
+    <article class="card-body">
+      <a class="float-left" [routerLink]="['/login']">
+        &larr;&nbsp;Volver atrás
+      </a>
+      <br />
+      <hr />
+      <img
+        class="img-responsive"
+        src="/assets/img/logo.png"
+        width="200"
+        height="80"
+        alt="NUTRARIAS"
+      />
+      <hr />
+
+      <h4 class="card-title mb-4 mt-1">¡Gracias for registrarte!</h4>
+      <p class="lead">
+        Hemos enviado un email de confirmación a
+        <strong>
+          <strong> {{ user?.email }} </strong> </strong
+        >.
+      </p>
+      <p>
+        Por favor, verifica tu cuenta haciendo click en el enlace que te hemos
+        enviado.
+      </p>
+      <hr />
+      <p class="text-center">
+        ¿No lo has recibido?&nbsp;
+        <button
+          type="button"
+          class="btn btn-link btn-sm"
+          (click)="onVerificationEmail()"
+        >
+          Reenviar email de confirmación
+        </button>
+      </p>
+    </article>
+  </div>
+</aside>
+
+<ng-template #loading> Loading.... </ng-template>

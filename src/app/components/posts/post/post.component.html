@@ -1,0 +1,42 @@
+<div
+  class="col-md-12 mx-auto mt-4"
+  id="top"
+  *ngIf="post$ | async as post; else loading"
+>
+  <a [routerLink]="['/blog']"> &larr;&nbsp;Volver atrás </a>
+
+  <div class="card mb-3 mt-3" style="min-width: fit-content">
+    <h3 class="card-header">
+      {{ post.headerPost }}
+    </h3>
+    <div class="card-body">
+      <h5 class="card-title">{{ post.titlePost }}</h5>
+      <h6 class="card-subtitle text-muted">{{ post.subtitlePost }}</h6>
+    </div>
+    <img
+      style="height: 400px; display: block"
+      src="{{ post.imagePost }}"
+      alt="Post image"
+    />
+    <div class="card-body">
+      <p class="card-text">
+        {{ post.contentPost }}
+      </p>
+    </div>
+    <div class="card-body">
+      <mat-chip-list aria-label="Tags">
+        <mat-chip *ngFor="let tag of post.tagsPost" [ngClass]="tag">{{
+          tag
+        }}</mat-chip>
+      </mat-chip-list>
+    </div>
+    <div class="card-footer text-muted">{{ post.datePost }}</div>
+  </div>
+</div>
+<ng-template #loading>
+  <div class="mt-5 container-spinner">
+    <mat-spinner></mat-spinner>
+    <br />
+  </div>
+  <p class="lead text-center">Se está cargando la publicación...</p>
+</ng-template>

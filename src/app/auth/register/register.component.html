@@ -1,0 +1,163 @@
+<aside class="col-md-5 mx-auto mt-5">
+  <div class="card">
+    <article class="card-body">
+      <p class="text-center">
+        <img
+          class="text-center"
+          src="/assets/img/logo.png"
+          width="200"
+          height="80"
+          alt="NUTRARIAS"
+        />
+      </p>
+      <hr />
+      <h4 class="card-title mt-3 text-center">Crea una cuenta</h4>
+      <small id="emailHelp" class="form-text text-muted text-center">
+        Nunca compartiermos tus datos con nadie.
+      </small>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <!-- Formulario nombre-->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+
+          <input
+            name="nombre"
+            class="form-control"
+            placeholder="Nombre"
+            type="text"
+            formControlName="nombre"
+          />
+        </div>
+        <!-- Apellido 1-->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input
+            name="apellido1"
+            class="form-control"
+            placeholder="Primer apellido"
+            type="text"
+            formControlName="apellido1"
+          />
+        </div>
+        <!-- Apellido 2 -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input
+            name="apellido2"
+            class="form-control"
+            placeholder="Segundo apellido"
+            type="text"
+            formControlName="apellido2"
+          />
+        </div>
+        <!-- form-group// -->
+
+        <!--Fecha nacimiento-->
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-date"></i> Fecha de Nacimiento</span
+            >
+          </div>
+
+          <input
+            id="dateOfBirth"
+            name="dateOfBirth"
+            class="form-control"
+            placeholder="DD/MM/AAAA"
+            type="date"
+            formControlName="birthdate"
+          />
+        </div>
+
+        <!-- Email-->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input
+            name="correo"
+            class="form-control"
+            placeholder="Correo electrónico"
+            type="email"
+            formControlName="email"
+            [(ngModel)]="email1"
+          />
+        </div>
+        <!-- form-group// -->
+
+        <!--Telefono-->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-phone"></i>
+            </span>
+          </div>
+          <select class="custom-select" style="max-width: 120px">
+            <option selected="">+34</option>
+          </select>
+          <input
+            name="telefono"
+            class="form-control"
+            placeholder="Número de teléfono"
+            type="text"
+            formControlName="phone"
+          />
+        </div>
+        <!-- form-group// -->
+        <!--Contraseña-->
+        <!-- form-group end.// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input
+            class="form-control"
+            placeholder="Crea una contraseña"
+            type="password"
+            formControlName="password"
+            [(ngModel)]="password1"
+          />
+        </div>
+        <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input
+            class="form-control"
+            placeholder="Repite tu contraseña"
+            type="password"
+            formControlName="password2"
+            [(ngModel)]="password3"
+          />
+        </div>
+        <!-- form-group// -->
+        <div class="form-group">
+          <button
+            type="submit"
+            class="btn btn-primary btn-block"
+            [disabled]="!email1 || !password1 || !password3"
+          >
+            Crear tu cuenta
+          </button>
+        </div>
+        <!-- form-group// -->
+      </form>
+      <p class="text-center">
+        ¿Ya estás registrado?
+        <a [routerLink]="['/login']">&nbsp;Inicia Sesión</a>
+      </p>
+    </article>
+  </div>
+</aside>

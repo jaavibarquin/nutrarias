@@ -1,0 +1,665 @@
+<div class="col-md-11 mx-auto mt-4" id="top">
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1 class="display-3">Nuestro Equipo</h1>
+    <hr class="my-4" />
+    <p class="lead">
+      En Nutrarias te asesoraremos la mejor nutrición y entrenamiento, a la vez
+      que te acompañaremos emocionalmente para las metas que te propongas.
+    </p>
+  </div>
+  <!-- Jumbotron ends-->
+  <!-- Roberto-->
+  <div class="card mb-3 ml-1 mr-1">
+    <div class="card">
+      <h3 class="card-header">Roberto Arias Marrón</h3>
+      <div class="card-body">
+        <h5 class="card-title">Dietista-Nutricionista</h5>
+        <h6 class="card-subtitle text-muted">
+          <em>CEO Fundador Nutrarias Health</em>
+        </h6>
+      </div>
+
+      <!-- Small Screens-->
+      <div class="d-block d-sm-none">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <img
+                class="float-left"
+                style="max-width: 150%"
+                src="/assets/img/fotoroberto_opt.png"
+                alt="Card image"
+              />
+            </div>
+            <div class="col">
+              <div
+                class="nav flex-nav nav-pills"
+                id="v-pills-tab"
+                role="tablist"
+                aria-orientation="vertical"
+              >
+                <a
+                  class="nav-link active"
+                  id="v-pills-formacion-tab"
+                  data-toggle="pill"
+                  href="#formacion"
+                  role="tab"
+                  aria-controls="v-pills-formacion"
+                  aria-selected="true"
+                  >Formación</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-experiencia-tab"
+                  data-toggle="pill"
+                  href="#experiencia"
+                  role="tab"
+                  aria-controls="v-pills-experiencia"
+                  aria-selected="false"
+                  >Experiencia</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-servicios-tab"
+                  data-toggle="pill"
+                  href="#servicios"
+                  role="tab"
+                  aria-controls="v-pills-servicios"
+                  aria-selected="false"
+                  >Servicios</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-contacto-tab"
+                  data-toggle="pill"
+                  href="#contacto"
+                  role="tab"
+                  aria-controls="v-pills-contacto"
+                  aria-selected="false"
+                  >Contacto</a
+                >
+              </div>
+            </div>
+
+            <div class="tab-content" id="v-pills-tabContent">
+              <!-- Texto Formacion-->
+              <div
+                class="tab-pane fade show active"
+                id="formacion"
+                role="tabpanel"
+                aria-labelledby="v-pills-formacion-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  {{ textoRoberto1 }}
+                  <br />
+                  <br />
+                  {{ textoRoberto2 }}
+                </p>
+              </div>
+              <!-- Texto Experiencia-->
+              <div
+                class="tab-pane fade"
+                id="experiencia"
+                role="tabpanel"
+                aria-labelledby="v-pills-experiencia-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  {{ textoRoberto3 }}
+                  <br />
+                  <br />
+                  {{ textoRoberto4 }}
+                  <br />
+                  <br />
+                  {{ textoRoberto5 }}
+                </p>
+              </div>
+              <!-- Texto Servicios-->
+              <div
+                class="tab-pane fade"
+                id="servicios"
+                role="tabpanel"
+                aria-labelledby="v-pills-servicios-tab"
+              >
+                <ul class="lead card-body" style="font-size: 115%">
+                  <li>
+                    <a [routerLink]="['/planes']" fragment="nutricionSencillo"
+                      >Plan de Seguimiento Sencillo</a
+                    >
+                  </li>
+                  <li>
+                    <a [routerLink]="['/planes']" fragment="nutricionTrimestral"
+                      >Plan de Seguimiento Trimestral</a
+                    >
+                  </li>
+                  <li>
+                    <p>
+                      <a
+                        [routerLink]="['/planes']"
+                        fragment="nutricionDomicilio"
+                        >Plan de Seguimiento a Domicilio</a
+                      >
+                      <br />
+                      <em><small>(Solo Santander y alrededores)</small></em>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- Texto Contacto -->
+              <div
+                class="tab-pane fade"
+                id="contacto"
+                role="tabpanel"
+                aria-labelledby="v-pills-contacto-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  - Teléfono y WhatsApp: &nbsp;
+                  <a href="tel:670358942" class="card-link"> 670 35 89 42</a>
+                  <br />
+                  <br />
+                  - Correo electrónico: &nbsp;
+                  <a
+                    href="mailto:robertoarias.nutricion@gmail.com"
+                    class="card-link"
+                  >
+                    robertoarias.nutricion@gmail.com</a
+                  >
+                  <br />
+                  <br />
+                  - Skype: &nbsp;
+                  <small>
+                    <a
+                      class="card-link"
+                      href="skype:live:.cid.38ba366b918aa3d8?chat"
+                    >
+                      Roberto Arias Marron (34670 35 89 42)</a
+                    ></small
+                  >
+                  <br />
+                  &nbsp; Usuario: &nbsp;
+                  <small>
+                    <a
+                      class="card-link"
+                      href="skype:live:.cid.38ba366b918aa3d8?chat"
+                    >
+                      live:.cid.38ba366b918aa3d8</a
+                    ></small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Big Screens-->
+      <div class="d-none d-sm-block">
+        <img
+          style="float: left; max-height: 400px; min-width: 200px"
+          src="/assets/img/fotoroberto_opt.png"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <div
+            class="nav flex-nav nav-pills justify-content-end"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <a
+              class="nav-link active"
+              id="v-pills-formacion-tab"
+              data-toggle="pill"
+              href="#formacion1"
+              role="tab"
+              aria-controls="v-pills-formacion"
+              aria-selected="true"
+              >Formación</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-experiencia-tab"
+              data-toggle="pill"
+              href="#experiencia1"
+              role="tab"
+              aria-controls="v-pills-experiencia"
+              aria-selected="false"
+              >Experiencia</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-servicios-tab"
+              data-toggle="pill"
+              href="#servicios1"
+              role="tab"
+              aria-controls="v-pills-servicios"
+              aria-selected="false"
+              >Servicios</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-contacto-tab"
+              data-toggle="pill"
+              href="#contacto1"
+              role="tab"
+              aria-controls="v-pills-contacto"
+              aria-selected="false"
+              >Contacto</a
+            >
+          </div>
+
+          <div class="tab-content" id="v-pills-tabContent">
+            <!-- Texto Formacion-->
+            <div
+              class="tab-pane fade show active"
+              id="formacion1"
+              role="tabpanel"
+              aria-labelledby="v-pills-formacion-tab"
+            >
+              <p class="lead card-body" style="font-size: 115%">
+                {{ textoRoberto1 }}
+                <br />
+                <br />
+                {{ textoRoberto2 }}
+              </p>
+            </div>
+            <!-- Texto Experiencia-->
+            <div
+              class="tab-pane fade"
+              id="experiencia1"
+              role="tabpanel"
+              aria-labelledby="v-pills-experiencia-tab"
+            >
+              <p class="lead card-body" style="font-size: 115%">
+                {{ textoRoberto3 }}
+                <br />
+                <br />
+                {{ textoRoberto4 }}
+                <br />
+                <br />
+                {{ textoRoberto5 }}
+              </p>
+            </div>
+            <!-- Texto Servicios-->
+            <div
+              class="tab-pane fade"
+              id="servicios1"
+              role="tabpanel"
+              aria-labelledby="v-pills-servicios-tab"
+            >
+              <ul class="lead card-body" style="font-size: 115%">
+                <li>
+                  <a [routerLink]="['/planes']" fragment="nutricionSencillo"
+                    >Plan de Seguimiento Sencillo</a
+                  >
+                </li>
+                <li>
+                  <a [routerLink]="['/planes']" fragment="nutricionTrimestral"
+                    >Plan de Seguimiento Trimestral</a
+                  >
+                </li>
+                <li>
+                  <p>
+                    <a [routerLink]="['/planes']" fragment="nutricionDomicilio">
+                      Plan de Seguimiento a Domicilio </a
+                    ><br />
+                    <em><small>(Solo Santander y alrededores)</small></em>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!-- Texto Contacto -->
+            <div
+              class="tab-pane fade"
+              id="contacto1"
+              role="tabpanel"
+              aria-labelledby="v-pills-contacto-tab"
+            >
+              <p class="lead card-body" style="font-size: 115%">
+                - Teléfono y WhatsApp: &nbsp;
+                <a href="tel:670358942" class="card-link"> 670 35 89 42</a>
+                <br />
+                <br />
+                - Correo electrónico: &nbsp;
+                <a
+                  href="mailto:robertoarias.nutricion@gmail.com"
+                  class="card-link"
+                >
+                  robertoarias.nutricion@gmail.com</a
+                >
+                <br />
+                <br />
+                - Skype: &nbsp;
+                <small>
+                  <a
+                    class="card-link"
+                    href="skype:live:.cid.38ba366b918aa3d8?chat"
+                  >
+                    Roberto Arias Marron (34670 35 89 42)</a
+                  ></small
+                >
+                <br />
+                &nbsp; Usuario: &nbsp;
+                <small>
+                  <a
+                    class="card-link"
+                    href="skype:live:.cid.38ba366b918aa3d8?chat"
+                  >
+                    live:.cid.38ba366b918aa3d8</a
+                  ></small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Raul-->
+  <div class="card mb-3 ml-1 mr-1">
+    <div class="card">
+      <h3 class="card-header text-right">Raúl Salazar Ruiz de Dulanto</h3>
+      <div class="card-body">
+        <h5 class="card-title text-right">Entrenador Personal</h5>
+      </div>
+
+      <!-- Small Screens-->
+      <div class="d-block d-sm-none">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div
+                class="nav flex-nav nav-pills"
+                id="v-pills-tab"
+                role="tablist"
+                aria-orientation="vertical"
+              >
+                <a
+                  class="nav-link active"
+                  id="v-pills-formacion-tab"
+                  data-toggle="pill"
+                  href="#formacionRaul"
+                  role="tab"
+                  aria-controls="v-pills-formacion"
+                  aria-selected="true"
+                  >Formación</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-experiencia-tab"
+                  data-toggle="pill"
+                  href="#experienciaRaul"
+                  role="tab"
+                  aria-controls="v-pills-experiencia"
+                  aria-selected="false"
+                  >Experiencia</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-servicios-tab"
+                  data-toggle="pill"
+                  href="#serviciosRaul"
+                  role="tab"
+                  aria-controls="v-pills-servicios"
+                  aria-selected="false"
+                  >Servicios</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-contacto-tab"
+                  data-toggle="pill"
+                  href="#contactoRaul"
+                  aria-controls="v-pills-contacto"
+                  aria-selected="false"
+                  >Contacto</a
+                >
+              </div>
+            </div>
+            <div class="col">
+              <img
+                class="float-right"
+                style="max-width: 150%"
+                src="/assets/img/fotoraul_opt.png"
+                alt="Card image"
+              />
+            </div>
+
+            <div class="tab-content" id="v-pills-tabContent">
+              <!-- Texto Formacion-->
+              <div
+                class="tab-pane fade show active"
+                id="formacionRaul"
+                role="tabpanel"
+                aria-labelledby="v-pills-formacion-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  {{ textoRaul1 }}
+                  <br />
+                  <br />
+                  {{ textoRaul2 }}
+                </p>
+              </div>
+              <!-- Texto Experiencia-->
+              <div
+                class="tab-pane fade"
+                id="experienciaRaul"
+                role="tabpanel"
+                aria-labelledby="v-pills-experiencia-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  {{ textoRaul3 }}
+                </p>
+              </div>
+              <!-- Texto Servicios-->
+              <div
+                class="tab-pane fade"
+                id="serviciosRaul"
+                role="tabpanel"
+                aria-labelledby="v-pills-servicios-tab"
+              >
+                <ul class="lead card-body" style="font-size: 115%">
+                  <li>
+                    <a
+                      [routerLink]="['/planes']"
+                      fragment="entrenamientoSencillo"
+                    >
+                      Planificación y Rutina de Entrenamiento personalizada.
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/planes']" fragment="entrenamientoOnline"
+                      >Entrenamientos personales online.</a
+                    >
+                  </li>
+                  <li>
+                    <p>
+                      <a
+                        [routerLink]="['/planes']"
+                        fragment="entrenamientoDomicilio"
+                      >
+                        Entrenamientos personales presenciales </a
+                      ><br />
+                      <em><small>(Solo Bilbao y alrededores)</small></em>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- Texto Contacto -->
+              <div
+                class="tab-pane fade"
+                id="contactoRaul"
+                role="tabpanel"
+                aria-labelledby="v-pills-contacto-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  - Teléfono y WhatsApp: &nbsp;
+                  <a href="tel:664692115" class="card-link"> 664 69 21 15</a>
+                  <br />
+                  <br />
+                  - Correo electrónico: &nbsp;
+                  <a href="mailto:rs4training1@gmail.com" class="card-link">
+                    rs4training1@gmail.com</a
+                  >
+                  <br />
+                  <br />
+                  - Skype: &nbsp;
+                  <small>
+                    <a class="card-link" href="skype:34664692115?chat">
+                      Raúl Salazar Ruiz de Dulanto (34664692115)</a
+                    ></small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Big Screens-->
+      <div class="d-none d-sm-block">
+        <img
+          style="float: right; max-height: 400px"
+          src="/assets/img/fotoraul_opt.png"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <div
+            class="nav flex-nav nav-pills"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <a
+              class="nav-link active"
+              id="v-pills-formacion-tab"
+              data-toggle="pill"
+              href="#formacionRaul1"
+              role="tab"
+              aria-controls="v-pills-formacion"
+              aria-selected="true"
+              >Formación</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-experiencia-tab"
+              data-toggle="pill"
+              href="#experienciaRaul1"
+              role="tab"
+              aria-controls="v-pills-experiencia"
+              aria-selected="false"
+              >Experiencia</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-servicios-tab"
+              data-toggle="pill"
+              href="#serviciosRaul1"
+              role="tab"
+              aria-controls="v-pills-servicios"
+              aria-selected="false"
+              >Servicios</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-contacto-tab"
+              data-toggle="pill"
+              href="#contactoRaul1"
+              role="tab"
+              aria-controls="v-pills-contacto"
+              aria-selected="false"
+              >Contacto</a
+            >
+          </div>
+
+          <div class="tab-content" id="v-pills-tabContent">
+            <!-- Texto Formacion-->
+            <div
+              class="tab-pane fade show active"
+              id="formacionRaul1"
+              role="tabpanel"
+              aria-labelledby="v-pills-formacion-tab"
+            >
+              <p class="lead card-body" style="font-size: 115%">
+                {{ textoRaul1 }}
+                <br />
+                <br />
+                {{ textoRaul2 }}
+              </p>
+            </div>
+            <!-- Texto Experiencia-->
+            <div
+              class="tab-pane fade"
+              id="experienciaRaul1"
+              role="tabpanel"
+              aria-labelledby="v-pills-experiencia-tab"
+            >
+              <p class="lead card-body" style="font-size: 115%">
+                {{ textoRaul3 }}
+              </p>
+            </div>
+            <!-- Texto Servicios-->
+            <div
+              class="tab-pane fade"
+              id="serviciosRaul1"
+              role="tabpanel"
+              aria-labelledby="v-pills-servicios-tab"
+            >
+              <ul class="lead card-body" style="font-size: 115%">
+                <li>
+                  <a
+                    [routerLink]="['/planes']"
+                    fragment="entrenamientoSencillo"
+                  >
+                    Planificación y Rutina de Entrenamiento personalizada.
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/planes']" fragment="entrenamientoOnline"
+                    >Entrenamientos personales online.</a
+                  >
+                </li>
+                <li>
+                  <p>
+                    <a
+                      [routerLink]="['/planes']"
+                      fragment="entrenamientoDomicilio"
+                    >
+                      Entrenamientos personales presenciales </a
+                    ><br />
+                    <em><small>(Solo Bilbao y alrededores)</small></em>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!-- Texto Contacto -->
+            <div
+              class="tab-pane fade"
+              id="contactoRaul1"
+              role="tabpanel"
+              aria-labelledby="v-pills-contacto-tab"
+            >
+              <p class="lead card-body" style="font-size: 115%">
+                - Teléfono y WhatsApp: &nbsp;
+                <a href="tel:664692115" class="card-link"> 664 69 21 15</a>
+                <br />
+                <br />
+                - Correo electrónico: &nbsp;
+                <a href="mailto:rs4training1@gmail.com" class="card-link">
+                  rs4training1@gmail.com</a
+                >
+                <br />
+                <br />
+                - Skype: &nbsp;
+                <small>
+                  <a class="card-link" href="skype:34664692115?chat">
+                    Raúl Salazar Ruiz de Dulanto (34664692115)</a
+                  ></small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="btn btn-secondary float-right" href="/equipo#top">Volver Arriba</a>
+</div>

@@ -1,0 +1,54 @@
+<div class="col-md-12 mx-auto mt-4" id="top">
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1 class="display-3">Blog Nutrarias</h1>
+    <hr class="my-4" />
+    <p class="lead">
+      En este blog iremos comentando las novedades como publicando los ultimos
+      estudios y logros.
+    </p>
+  </div>
+  <!-- Jumbotron ends-->
+  <div class="row" *ngIf="posts$ | async as posts; else loading">
+    <div class="col" *ngFor="let post of posts">
+      <div class="card mb-3">
+        <h3 class="card-header">
+          <a [routerLink]="['/blog/post', post.idPost]">{{
+            post.headerPost
+          }}</a>
+        </h3>
+        <div class="card-body">
+          <h5 class="card-title">{{ post.titlePost }}</h5>
+          <h6 class="card-subtitle text-muted">{{ post.subtitlePost }}</h6>
+        </div>
+        <img
+          style="height: 200px; width: 100%; display: block"
+          src="{{ post.imagePost }}"
+          alt="Post image"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            {{ post.contentPost }}
+          </p>
+        </div>
+        <div class="card-body">
+          <mat-chip-list aria-label="Tags">
+            <mat-chip *ngFor="let tag of post.tagsPost" [ngClass]="tag">{{
+              tag
+            }}</mat-chip>
+          </mat-chip-list>
+        </div>
+        <div class="card-footer text-muted">{{ post.datePost }}</div>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>
+    <div class="container-spinner">
+      <mat-spinner></mat-spinner>
+      <br />
+    </div>
+    <p class="lead text-center">
+      Vaya, parece que el blog aún está vacio, vuelve a intentarlo más tarde.
+    </p></ng-template
+  >
+</div>

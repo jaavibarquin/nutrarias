@@ -1,0 +1,59 @@
+<div class="new-post-container">
+  <form [formGroup]="newPlanForm" (ngSubmit)="addNewPlan(newPlanForm)">
+    <!--Id del plan-->
+    <mat-form-field>
+      <mat-label>Introduce el ID</mat-label>
+      <input matInput type="text" placeholder="Ej: NUT-SEN-001" [formControl]="uid" />
+    </mat-form-field>
+    <!--Area del Plan-->
+    <mat-form-field>
+      <mat-label>Area del Post</mat-label>
+      <mat-select placeholder="Selecciona el Área" multiple [formControl]="area">
+        <mat-option value="SERVICIO DE NUTRICIÓN"
+          >SERVICIO DE NUTRICIÓN</mat-option
+        >
+        <mat-option value="SERVICIO DE ENTRENAMIENTO"
+          >SERVICIO DE ENTRENAMIENTO</mat-option
+        >
+        <mat-option value="SERVICIO DE PSICOLOGÍA"
+          >SERVICIO DE PSICOLOGÍA</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <!--Tipo del post-->
+    <mat-form-field>
+      <mat-label>Tipo de Post</mat-label>
+      <mat-select placeholder="Selecciona el Tipo" multiple [formControl]="tipo>
+        <mat-option value="SENCILLO">SENCILLO</mat-option>
+        <mat-option value="TRIMESTRAL">TRIMESTRAL</mat-option>
+        <mat-option value="ONLINE">ONLINE</mat-option>
+        <mat-option value="DOMICILIO">DOMICILIO</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--Titulo del Plan-->
+    <mat-form-field>
+      <mat-label>Título del Plan</mat-label>
+      <input matInput placeholder="Introduce el nombre" type="text"[formControl]="nombre" />
+    </mat-form-field>
+    <!--Subtitulo del post-->
+    <mat-form-field>
+      <mat-label>Subtítulo del Plan</mat-label>
+      <input matInput placeholder="Introduce el subtítulo" type="text" [formControl]="subtitulo" />
+    </mat-form-field>
+    <!--Precio del Post-->
+    <mat-form-field appearance="fill">
+      <mat-label>Precio</mat-label>
+      <input matInput type="number" class="example-right-align"[formControl]="precio" />
+      <span matSuffix>.00 &nbsp;&euro;</span>
+    </mat-form-field>
+    <!--Descripcion del plan-->
+    <mat-form-field appearance="fill">
+      <mat-label>Descripcion</mat-label>
+      <textarea matInput placeholder="Opcional" [formControl]="descripcion"></textarea>
+    </mat-form-field>
+  </form>
+
+  <div class="container-button">
+    <input type="submit" class="mat-flat-button" value="Guardar Plan" />
+  </div>
+</div>

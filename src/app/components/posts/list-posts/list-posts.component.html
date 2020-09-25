@@ -1,0 +1,77 @@
+<div class="mat-elevation-z8">
+  <mat-form-field>
+    <mat-label>Buscar un Post</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filtro" #input />
+  </mat-form-field>
+  <div class="container-btn-new">
+    <button mat-stroked-button (click)="onNewPost()">
+      <mat-icon>note_add</mat-icon> &nbsp; Nuevo Post
+    </button>
+  </div>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <!-- id Column -->
+    <ng-container matColumnDef="idPost">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>idPost</th>
+      <td mat-cell *matCellDef="let element">{{ element.idPost }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="headerPost">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cabecera</th>
+      <td mat-cell *matCellDef="let element">{{ element.headerPost }}</td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="titlePost">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Título</th>
+      <td mat-cell *matCellDef="let element">{{ element.titlePost }}</td>
+    </ng-container>
+
+    <!-- Subtitle Column -->
+    <ng-container matColumnDef="subtitlePost">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Subtítulo</th>
+      <td mat-cell *matCellDef="let element">{{ element.subtitlePost }}</td>
+    </ng-container>
+
+    <!-- date Column -->
+    <ng-container matColumnDef="datePost">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+      <td mat-cell *matCellDef="let element">{{ element.datePost }}</td>
+    </ng-container>
+    <!-- tags Column -->
+    <ng-container matColumnDef="tagsPost">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Etiquetas</th>
+      <td mat-cell *matCellDef="let element">{{ element.tagsPost }}</td>
+    </ng-container>
+
+    <!-- Accions Column -->
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="onEditPost(element)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-stroked-button color="warn" (click)="onDeletePost(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Cuando no hay ninguna fila que coincida con el filtro -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No hay datos que coincidan con el filtro "{{ element.value }}"
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+  </mat-paginator>
+</div>

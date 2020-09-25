@@ -1,0 +1,488 @@
+<div class="col-md-11 mx-auto mt-4" id="top">
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1 class="display-3">Planes</h1>
+    <hr class="my-4" />
+
+    <p class="lead">Accede al plan que mejor se adapta a tus necesidades.</p>
+    <div class="row">
+      <div class="col mb-3">
+        <a
+          class="btn btn-block"
+          href="/planes#nutricion"
+          style="max-width: 312px"
+          >Planes de Nutrición Personalizada
+        </a>
+
+        <div
+          class="btn-group btn-group-toggle"
+          style="min-width: 312px"
+          data-toggle="buttons"
+        >
+          <label class="btn btn-primary">
+            <input
+              type="radio"
+              name="options"
+              id="option1"
+              autocomplete="off"
+            />
+            <a href="/planes#nutricionSencillo" class="text-white">Sencillo</a>
+          </label>
+          <label class="btn btn-primary">
+            <input
+              type="radio"
+              name="options"
+              id="option1"
+              autocomplete="off"
+            />
+            <a href="/planes#nutricionTrimestral" class="text-white"
+              >Trimestral</a
+            >
+          </label>
+          <label class="btn btn-primary">
+            <input
+              type="radio"
+              name="options"
+              id="option1"
+              autocomplete="off"
+            />
+            <a href="/planes#nutricionDomicilio" class="text-white"
+              >A Domicilio</a
+            >
+          </label>
+        </div>
+      </div>
+      <div class="col">
+        <a
+          class="btn btn-block"
+          href="/planes#entrenamiento"
+          style="max-width: 312px"
+          >Planes de Entrenamiento
+        </a>
+        <div
+          class="btn-group btn-group-toggle"
+          style="min-width: 312px"
+          data-toggle="buttons"
+        >
+          <label class="btn btn-primary">
+            <input
+              type="radio"
+              name="options"
+              id="option1"
+              autocomplete="off"
+            />
+            <a href="/planes#entrenamientoSencillo" class="text-white"
+              >Sencillo</a
+            >
+          </label>
+          <label class="btn btn-primary">
+            <input
+              type="radio"
+              name="options"
+              id="option2"
+              autocomplete="off"
+            />
+            <a href="/planes#entrenamientoOnline" class="text-white"> Online</a>
+          </label>
+          <label class="btn btn-primary">
+            <input
+              type="radio"
+              name="options"
+              id="option3"
+              autocomplete="off"
+            />
+            <a href="/planes#entrenamientoDomicilio" class="text-white"
+              >A Domicilio</a
+            >
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Planes-->
+  <!--Nutricion-->
+  <div class="card mb-3">
+    <h2 class="card-header" id="nutricion">
+      Tarifas Servicio de Nutrición Personalizada
+    </h2>
+    <!-- Sencillo-->
+    <div class="card-body" id="nutricionSencillo">
+      <h3 class="card-title">Plan de Seguimiento Sencillo</h3>
+      <h6 class="lead card-subtitle">
+        Incluye:
+
+        <ul>
+          <br />
+          <li>Entrevista Personal</li>
+          <li>Historia Clínica</li>
+          <li>Encuesta de Hábitos Alimentarios</li>
+          <li>Recuerdo de 72 horas</li>
+          <li>Elaboración del Plan Nutricional e Informe Personal</li>
+          <li>Seguimiento íntegro de la Evolución</li>
+        </ul>
+      </h6>
+      <br />
+      <div class="col" *ngFor="let plan of planes">
+        <div
+          class="card border-secondary mb-3"
+          *ngIf="
+            plan.area == 'SERVICIO DE NUTRICIÓN' && plan.tipo == 'SENCILLO'
+          "
+        >
+          <div class="card-header text-success">{{ plan.area }}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ plan.nombre }}</h4>
+            <h5 class="card-subtitle text-warning">
+              {{ plan.subtitulo }}
+            </h5>
+            <br />
+            <p>{{ plan.descripcion }}</p>
+            <h3 class="card-text text-right mr-3">
+              <strong> {{ plan.precio }} &euro; </strong>
+            </h3>
+            <button class="btn float-right btn-success">Adquirir</button>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-secondary float-right" href="/planes#top"
+        >Volver Arriba</a
+      >
+    </div>
+    <hr />
+    <!--Trimestral-->
+    <div class="card-body" id="nutricionTrimestral">
+      <h3 class="card-title">Plan de Seguimiento Trimestral</h3>
+      <h6 class="lead card-subtitle">
+        El plan de seguimiento mensual permite al paciente realizar cinco
+        consultas programadas durante el trimestre de suscripción en los que se
+        llevara a cabo:
+        <ul>
+          <br />
+          <li>Entrevista Personal</li>
+          <li>Historia Clínica</li>
+          <li>Encuesta de Hábitos Alimentarios</li>
+          <li>Recuerdo de 72 horas</li>
+          <li>Intervención Nutricional</li>
+          <li>Elaboración del Plan Nutricional e Informe Personal</li>
+          <li>Seguimiento Íntegro de la Evolución</li>
+        </ul>
+        <strong><strong>Además el paciente tendrá acceso a:</strong></strong>
+        <ul>
+          <br />
+          <li>Contenido exclusivo sobre alimentación y salud</li>
+          <li>Videos divulgativos</li>
+          <li>Publicaciones en el blog</li>
+          <li>Charlas colaborativas y las últimas publicaciones científicas</li>
+        </ul>
+      </h6>
+      <br />
+      <div class="col" *ngFor="let plan of planes">
+        <div
+          class="card border-secondary mb-3"
+          *ngIf="
+            plan.area == 'SERVICIO DE NUTRICIÓN' && plan.tipo == 'TRIMESTRAL'
+          "
+        >
+          <div class="card-header text-success">{{ plan.area }}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ plan.nombre }}</h4>
+            <h5 class="card-subtitile text-warning">
+              {{ plan.subtitulo }}
+            </h5>
+            <br />
+            <p>{{ plan.descripcion }}</p>
+            <h3 class="card-text text-right mr-3">
+              <strong> {{ plan.precio }} &euro; </strong>
+            </h3>
+            <button class="btn float-right btn-success">Adquirir</button>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-secondary float-right" href="/planes#top"
+        >Volver Arriba</a
+      >
+    </div>
+    <hr />
+    <!--Domicilio-->
+    <div class="card-body" id="nutricionDomicilio">
+      <h3 class="card-title">Plan de Seguimiento a Domicilio</h3>
+      <h5 class="card-subtitle text-muted">
+        <em>Solo Santander y alrededores</em>
+      </h5>
+      <br />
+      <h6 class="lead card-subtitle">
+        Incluye:
+        <ul>
+          <li>Entrevista Personal</li>
+          <li>Historia Clínica</li>
+          <li>Encuesta de Hábitos Alimentarios</li>
+          <li>Recuerdo de 72 horas</li>
+          <li>Prueba de Bioimpedancia (Tanita)</li>
+          <li>Estudio de la Composición Corporal mediante Antropometría</li>
+          <li>Elaboración del Plan Nutricional e Informe personal</li>
+          <li>Seguimiento integro de la evolución</li>
+        </ul>
+      </h6>
+      <br />
+      <div class="col" *ngFor="let plan of planes">
+        <div
+          class="card border-secondary mb-3"
+          *ngIf="
+            plan.area == 'SERVICIO DE NUTRICIÓN' && plan.tipo == 'DOMICILIO'
+          "
+        >
+          <div class="card-header text-success">{{ plan.area }}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ plan.nombre }}</h4>
+            <h5 class="card-subtitle text-warning">
+              {{ plan.subtitulo }}
+            </h5>
+            <br />
+            <p>{{ plan.descripcion }}</p>
+            <h3 class="card-text text-right mr-3">
+              <strong> {{ plan.precio }} &euro; </strong>
+            </h3>
+            <button class="btn float-right btn-success">Adquirir</button>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-secondary float-right" href="/planes#top"
+        >Volver Arriba</a
+      >
+    </div>
+    <p class="card-body text-danger">
+      *Al contratar conjuntamente los servicios de nutrición y entrenamiento
+      personal pondremos a tu disposición la primera consulta de nutrición
+      gratuita, o en caso de haber adquirido el Plan Trimestral, un descuento
+      del 30%.
+    </p>
+    <hr />
+    <!--Empresas-->
+    <div class="card-body" id="nutricionEmpresas">
+      <h3 class="card-title">Plan para Empresas</h3>
+      <br />
+      <h6 class="lead card-subtitle">
+        Contactar al
+        <a href="tel:34670358941">670 35 89 42</a>
+        o al correo electrónico
+        <a
+          href="mailto:robertoarias.nutricion@gmail.com?subject=Información: Plan Para Empresas"
+          >robertoarias.nutricion@gmail.com</a
+        >
+      </h6>
+    </div>
+  </div>
+
+  <!--Entrenamiento-->
+  <div class="card mb-3">
+    <h2 class="card-header" id="entrenamiento">
+      Tarifas Servicio de Entrenamiento Personal
+    </h2>
+    <div class="card-body">
+      <h6 class="">
+        Ofertamos un total de tres metodologías de trabajo diferentes en función
+        de las necesidades de cada cliente:
+      </h6>
+    </div>
+    <!-- Sencillo-->
+    <div class="card-body" id="entrenamientoSencillo">
+      <h3 class="card-title">
+        Planificación y Rutina de Entrenamiento personalizada en función de las
+        necesidades específicas del cliente
+      </h3>
+      <h6 class="lead card-subtitle">
+        <br />
+        Incluye:
+        <br />
+        <ul>
+          <br />
+          <li>
+            Entrevista para conocer los objetivos, patologías o limitaciones del
+            sujeto de cara a poder realizar la planificación del entrenamiento.
+            <br />
+            Del mismo modo se realizará una explicación del modelo de trabajo
+            que utilizamos en los programas de entrenamiento.
+          </li>
+          <br />
+          <li>
+            Reunión telemática inicial para realizar una explicación de la
+            planificación del entrenamiento y de los ejercicios propuestos.
+          </li>
+          <br />
+          <li>
+            Comunicación constante para realizar modificaciones y cambios en
+            función de las sensaciones y necesidades de los clientes.
+          </li>
+          <br />
+          <li>
+            Una reunión mensual para resolver dudas, pautar recomendaciones y
+            orientar los futuros entrenamientos.
+          </li>
+        </ul>
+      </h6>
+      <br />
+      <div class="col" *ngFor="let plan of planes">
+        <div
+          class="card border-secondary mb-3"
+          *ngIf="
+            plan.area == 'SERVICIO DE ENTRENAMIENTO' && plan.tipo == 'SENCILLO'
+          "
+        >
+          <div class="card-header text-success">{{ plan.area }}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ plan.nombre }}</h4>
+            <h5 class="card-subtitle text-warning">
+              {{ plan.subtitulo }}
+            </h5>
+            <br />
+            <p>{{ plan.descripcion }}</p>
+
+            <h3 class="card-text text-right mr-3">
+              <strong> {{ plan.precio }} &euro; </strong>
+            </h3>
+            <button class="btn float-right btn-success">Adquirir</button>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-secondary float-right" href="/planes#top"
+        >Volver Arriba</a
+      >
+    </div>
+    <hr />
+    <!--Online-->
+    <div class="card-body" id="entrenamientoOnline">
+      <h3 class="card-title">Entrenamientos Personales Online</h3>
+      <h6 class="lead card-subtitle">
+        Incluye:
+        <ul>
+          <br />
+          <li>
+            Entrevista previa para conocer los objetivos, patologías o
+            limitaciones del sujeto de cara a poder realizar la planificación
+            del entrenamiento.
+            <br />
+            Del mismo modo se realizará una explicación del modelo de trabajo
+            que utilizamos en los programas de entrenamiento.
+          </li>
+          <br />
+          <li>
+            Reunión telemática inicial para realizar una explicación de la
+            planificación del entrenamiento y de los ejercicios propuestos.
+          </li>
+          <br />
+          <li>
+            Comunicación constante para realizar modificaciones y cambios en
+            función de las sensaciones y necesidades de los clientes.
+          </li>
+          <br />
+          <li>
+            Entrenamiento personal guiado personalmente mediante videollamada.
+          </li>
+        </ul>
+      </h6>
+      <br />
+      <div class="col" *ngFor="let plan of planes">
+        <div
+          class="card border-secondary mb-3"
+          *ngIf="
+            plan.area == 'SERVICIO DE ENTRENAMIENTO' && plan.tipo == 'ONLINE'
+          "
+        >
+          <div class="card-header text-success">{{ plan.area }}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ plan.nombre }}</h4>
+            <h5 class="card-subtitile text-warning">
+              {{ plan.subtitulo }}
+            </h5>
+            <br />
+            <p>{{ plan.descripcion }}</p>
+            <h3 class="card-text text-right mr-3">
+              <strong> {{ plan.precio }} &euro; </strong>
+            </h3>
+            <button class="btn float-right btn-success">Adquirir</button>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-secondary float-right" href="/planes#top"
+        >Volver Arriba</a
+      >
+    </div>
+    <hr />
+    <!--Domicilio-->
+    <div class="card-body" id="entrenamientoDomicilio">
+      <h3 class="card-title">Entrenamientos Personales Presenciales</h3>
+      <h5 class="card-subtitle text-muted">
+        <em>Solo Bilbao y alrededores</em>
+      </h5>
+      <br />
+      <h6 class="lead card-subtitle">
+        Incluye:
+
+        <ul>
+          <br />
+          <li>
+            Entrevista previa para conocer los objetivos, patologías o
+            limitaciones del sujeto de cara a poder realizar la planificación
+            del entrenamiento.
+            <br />
+            Del mismo modo se realizará una explicación del modelo de trabajo
+            que utilizamos en los programas de entrenamiento.
+          </li>
+          <br />
+          <li>
+            Reunión telemática para realizar una explicación de la planificación
+            del entrenamiento y de los ejercicios propuestos.
+          </li>
+          <br />
+          <li>
+            Comunicación constante para realizar modificaciones y cambios en
+            función de las sensaciones y necesidades del cliente observados en
+            las anteriores sesiones.
+          </li>
+          <br />
+          <li>
+            Entrenamiento presencial a domicilio 100% personalizado e
+            individualizado. No se requiere poseer material personal para
+            realizar dichos entrenamientos.
+          </li>
+        </ul>
+      </h6>
+      <br />
+      <div class="col" *ngFor="let plan of planes">
+        <div
+          class="card border-secondary mb-3"
+          *ngIf="
+            plan.area == 'SERVICIO DE ENTRENAMIENTO' && plan.tipo == 'DOMICILIO'
+          "
+        >
+          <div class="card-header text-success">{{ plan.area }}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ plan.nombre }}</h4>
+            <h5 class="card-subtitle text-warning">
+              {{ plan.subtitulo }}
+            </h5>
+            <br />
+            <p>{{ plan.descripcion }}</p>
+            <h3 class="card-text text-right mr-3">
+              <strong> Desde {{ plan.precio }} &euro; </strong>
+            </h3>
+            <a
+              class="btn float-right btn-success"
+              href="mailto:rs4training1@gmail.com?subject=Solicitar Entrenamiento Presencial"
+              >Solicitar</a
+            >
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-secondary float-right" href="/planes#top"
+        >Volver Arriba</a
+      >
+    </div>
+    <p class="card-body text-danger">
+      *Al contratar conjuntamente los servicios de nutrición y entrenamiento
+      personal pondremos a tu disposición la primera consulta de nutrición
+      gratuita, o en caso de haber adquirido el Plan Trimestral, un descuento
+      del 30%.
+    </p>
+  </div>
+</div>
