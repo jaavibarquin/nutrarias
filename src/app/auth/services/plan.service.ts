@@ -1,4 +1,3 @@
-import { PlanI } from 'src/app/shared/models/planes.interface';
 import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
@@ -6,12 +5,14 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+
 import { Observable, of } from 'rxjs';
 import { User } from 'src/app/shared/models/user.interface';
 import { switchMap } from 'rxjs/operators';
 import { RoleValidator } from '../helpers/roleValidator';
+import { PlanI } from 'src/app/shared/models/planes.interface';
 import { Plan } from '../../shared/models/plan.model';
-import { map } from 'rxjs/operators';
+import { finalize, map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class PlanService extends RoleValidator {
   public user$: Observable<User>;
@@ -62,9 +63,7 @@ export class PlanService extends RoleValidator {
   getPlanes() {
     return this.afs.collection('planes').snapshotChanges();
   }
-  createPlan(plan: PlanI) {
-    return this.afs.collection('planes').add(plan);
-  }
+
   updatePlan(plan: PlanI) {
     delete plan.uid;
     this.afs.doc('planes/' + plan.uid).update(plan);

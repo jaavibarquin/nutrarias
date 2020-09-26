@@ -21,6 +21,6 @@ export class NewPlanComponent implements OnInit {
   ngOnInit() {}
 
   addNewPlan(data: PlanI) {
-    console.log('NewPlan', data);
+    this.planSvc.createPlan(data);
   }
 }

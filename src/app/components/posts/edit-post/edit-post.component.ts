@@ -9,7 +9,7 @@ import { PostService } from '../post.service';
 })
 export class EditPostComponent implements OnInit {
   private imagen: any;
-  private imageOriginal: any;
+  private imageOriginal: string;
 
   @Input() post: PostI;
   constructor(private postSvc: PostService) {}

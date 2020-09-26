@@ -7,7 +7,7 @@ import { PlanI } from 'src/app/shared/models/planes.interface';
 import { PlanService } from 'src/app/auth/services/plan.service';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from 'src/app/shared/modal/modal.component';
+import { ModalPlanesComponent } from 'src/app/shared/modalPlanes/modalPlanes.component';
 @Component({
   selector: 'app-tablaPlanes',
   templateUrl: './tablaPlanes.component.html',
@@ -85,16 +85,17 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
   }
 
   openDialog(plan?: PlanI): void {
+    //editar
     const config = {
       data: {
-        message: plan ? 'Editar plan ' : 'Crear Plan',
+        message: plan ? 'Editar plan' : 'Crear Plan',
         content: plan,
       },
     };
     // crear nuevo
-    const dialogRef = this.dialog.open(ModalComponent);
+    const dialogRef = this.dialog.open(ModalPlanesComponent, config);
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result ${result}`);
+      console.log(`Dialog TABLAPLANES result ${result}`);
     });
   }
 }

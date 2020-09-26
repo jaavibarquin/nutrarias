@@ -29,6 +29,7 @@ import { NewPostComponent } from './components/posts/new-post/new-post.component
 import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
 import { MaterialModule } from './material.module';
 import { ModalComponent } from './shared/modal/modal.component';
+import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { ModalComponent } from './shared/modal/modal.component';
     EditPostComponent,
     PostComponent,
     ModalComponent,
+    ModalPlanesComponent,
   ],
   imports: [
     BrowserModule,

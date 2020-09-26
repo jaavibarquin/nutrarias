@@ -1,5 +1,5 @@
 <div class="new-post-container">
-  <form [formGroup]="newPlanForm" (ngSubmit)="addNewPlan(newPlanForm)">
+  <form [formGroup]="newPlanForm" (ngSubmit)="addNewPlan(newPlanForm.value)">
     <!--Id del plan-->
     <mat-form-field>
       <mat-label>Introduce el ID</mat-label>

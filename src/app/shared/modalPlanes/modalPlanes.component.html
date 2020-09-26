@@ -2,9 +2,7 @@
 
 <mat-dialog-content class="mat-dialog-content">
   <div *ngIf="data.content; else showNewForm">
-    <app-edit-post [post]="data.content"></app-edit-post>
+    <app-edit-plan [plan]="data.content"></app-edit-plan>
   </div>
-  <ng-template #showNewForm>
-    <app-new-post></app-new-post>
-  </ng-template>
+  <ng-template #showNewForm> <app-new-plan></app-new-plan> </ng-template>
 </mat-dialog-content>

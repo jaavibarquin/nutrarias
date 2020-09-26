@@ -34,12 +34,6 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  create(plan: PlanI) {
-    this.planSvc.createPlan(plan);
-  }
-  update(plan: PlanI) {
-    this.planSvc.updatePlan(plan);
-  }
   async onNewPlan() {}
 
   // async onNewPlan() {
