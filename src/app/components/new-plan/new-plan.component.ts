@@ -8,7 +8,19 @@ import { PlanService } from '../../auth/services/plan.service';
   styleUrls: ['./new-plan.component.css'],
 })
 export class NewPlanComponent implements OnInit {
+  public newPlanForm = new FormGroup({
+    uid: new FormControl('', Validators.required),
+    area: new FormControl('', Validators.required),
+    tipo: new FormControl('', Validators.required),
+    titulo: new FormControl(''),
+    subtitulo: new FormControl(''),
+    precio: new FormControl('', Validators.required),
+    descripcion: new FormControl(''),
+  });
   constructor(private planSvc: PlanService) {}
-
   ngOnInit() {}
+
+  addNewPlan(data: PlanI) {
+    console.log('NewPlan', data);
+  }
 }

@@ -1,10 +1,10 @@
 export interface PostI {
-  idPost: string;
+  id?: string;
   headerPost: string;
   titlePost: string;
   subtitlePost?: string;
-  imagePost?: string;
+  imagePost?: any;
+  fileRef?: any;
   contentPost: string;
-  tagsPost?: string;
-  datePost?: Date;
+  datePost: Date;
 }

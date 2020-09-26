@@ -1,6 +1,6 @@
 <div class="new-post-container">
   <div class="mat-form-container">
-    <form [formGroup]="newPostForm" (ngSubmit)="addNewPost(newPostForm.value)">
+    <form [formGroup]="editPostForm" (ngSubmit)="editPost(editPostForm.value)">
       <!--Cabecera del post-->
       <mat-form-field appearance="outline">
         <mat-label>Cabecera del Post</mat-label>
@@ -34,18 +34,15 @@
       </mat-form-field>
       <br />
       <!--Fecha de Publicacion-->
-      <mat-form-field>
+      <mat-form-field class="">
         <mat-label>Fecha del Post</mat-label>
         <input
           matInput
           placeholder="Introduce la fecha"
           type="datetime-local"
           formControlName="datePost"
-        /> </mat-form-field
-      ><small id="fileHelp" class="form-text text-muted"
-        >La fecha y hora de publicación es obligatoria. <br />
-        Formato "dd/mm/aaaa hh:mm"</small
-      >
+        />
+      </mat-form-field>
       <br />
       <!--Contenido del post-->
       <mat-form-field appearance="fill">
@@ -69,9 +66,7 @@
           (change)="handleImage($event)"
         />
         <small id="fileHelp" class="form-text text-muted"
-          >La foto es obligatoria, luego se puede cambiar. <br />
-
-          Tamaño maximo admitido 10MB.</small
+          >Tamaño maximo admitido 10MB.</small
         >
       </div>
       <br /><br />

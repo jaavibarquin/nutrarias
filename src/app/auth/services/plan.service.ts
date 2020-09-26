@@ -10,7 +10,7 @@ import { Observable, of } from 'rxjs';
 import { User } from 'src/app/shared/models/user.interface';
 import { switchMap } from 'rxjs/operators';
 import { RoleValidator } from '../helpers/roleValidator';
-
+import { Plan } from '../../shared/models/plan.model';
 import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class PlanService extends RoleValidator {
@@ -30,35 +30,35 @@ export class PlanService extends RoleValidator {
     );
   }
 
-  // async nuevoPlan(
-  //   uid: string,
-  //   area: string,
-  //   tipo: string,
-  //   nombre: string,
-  //   subtitulo: string,
-  //   precio: number,
-  //   descripcion: string
-  // ): Promise<PlanI> {
-  //   const plan = new Plan();
-  //   try {
-  //     const planRef: AngularFirestoreDocument<PlanI> = this.afs.doc(
-  //       `planes/${uid}`
-  //     );
-  //     const data: Plan = {
-  //       uid: uid,
-  //       area: area,
-  //       tipo: tipo,
-  //       nombre: nombre,
-  //       subtitulo: subtitulo,
-  //       precio: precio,
-  //       descripcion: descripcion,
-  //     };
-  //     planRef.set(data, { merge: true });
-  //     return plan;
-  //   } catch (error) {
-  //     window.alert(error);
-  //   }
-  // }
+  async nuevoPlan(
+    uid: string,
+    area: string,
+    tipo: string,
+    nombre: string,
+    subtitulo: string,
+    precio: number,
+    descripcion: string
+  ): Promise<PlanI> {
+    const plan = new Plan();
+    try {
+      const planRef: AngularFirestoreDocument<PlanI> = this.afs.doc(
+        `planes/${uid}`
+      );
+      const data: Plan = {
+        uid: uid,
+        area: area,
+        tipo: tipo,
+        nombre: nombre,
+        subtitulo: subtitulo,
+        precio: precio,
+        descripcion: descripcion,
+      };
+      planRef.set(data, { merge: true });
+      return plan;
+    } catch (error) {
+      window.alert(error);
+    }
+  }
   getPlanes() {
     return this.afs.collection('planes').snapshotChanges();
   }

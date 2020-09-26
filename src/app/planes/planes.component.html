@@ -32,7 +32,7 @@
             <input
               type="radio"
               name="options"
-              id="option1"
+              id="option2"
               autocomplete="off"
             />
             <a href="/planes#nutricionTrimestral" class="text-white"
@@ -43,7 +43,7 @@
             <input
               type="radio"
               name="options"
-              id="option1"
+              id="option3"
               autocomplete="off"
             />
             <a href="/planes#nutricionDomicilio" class="text-white"
@@ -52,7 +52,7 @@
           </label>
         </div>
       </div>
-      <div class="col">
+      <div class="col mb-3">
         <a
           class="btn btn-block"
           href="/planes#entrenamiento"
@@ -97,6 +97,14 @@
           </label>
         </div>
       </div>
+      <div class="col">
+        <a
+          class="btn btn-block"
+          href="/planes#psicologia"
+          style="max-width: 312px"
+          >Planes de Psicología
+        </a>
+      </div>
     </div>
   </div>
   <!--Planes-->
@@ -122,6 +130,7 @@
         </ul>
       </h6>
       <br />
+
       <div class="col" *ngFor="let plan of planes">
         <div
           class="card border-secondary mb-3"
@@ -176,6 +185,7 @@
         </ul>
       </h6>
       <br />
+
       <div class="col" *ngFor="let plan of planes">
         <div
           class="card border-secondary mb-3"
@@ -448,6 +458,7 @@
         </ul>
       </h6>
       <br />
+      <!--ngFor-->
       <div class="col" *ngFor="let plan of planes">
         <div
           class="card border-secondary mb-3"
@@ -484,5 +495,122 @@
       gratuita, o en caso de haber adquirido el Plan Trimestral, un descuento
       del 30%.
     </p>
+  </div>
+  <!--Psicologia-->
+  <div class="card mb-3">
+    <h2 class="card-header" id="psicologia">Tarifas Servicio de Psicología</h2>
+
+    <!-- Primera Consulta-->
+    <div class="card-body" id="psicologiaPrimeraConsulta">
+      <h3 class="card-title">Primera Consulta</h3>
+      <h6 class="lead card-subtitle">
+        <br />
+        Incluye:
+        <br />
+        <ul>
+          <br />
+          <li>
+            Entrevista para conocer al cliente, motivo de la consulta y sus
+            objetivos, así como llevar a cabo la formalización del
+            consentimiento informado y el plan de las sesiones.
+          </li>
+        </ul>
+      </h6>
+      <br />
+      <div class="col" *ngFor="let plan of planes">
+        <div
+          class="card border-secondary mb-3"
+          *ngIf="
+            plan.area == 'SERVICIO DE PSICOLOGÍA' &&
+            plan.tipo == 'SENCILLO' &&
+            plan.subtitulo == 'Primera Consulta'
+          "
+        >
+          <div class="card-header text-success">{{ plan.area }}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ plan.nombre }}</h4>
+            <h5 class="card-subtitle text-warning">
+              {{ plan.subtitulo }}
+            </h5>
+            <br />
+            <p>{{ plan.descripcion }}</p>
+            <div *ngIf="plan.precio > 0; else gratuita">
+              <h3 class="card-text text-right mr-3">
+                <strong> {{ plan.precio }} &euro; </strong>
+              </h3>
+            </div>
+            <ng-template #gratuita>
+              <h3 class="card-text text-right mr-3">
+                <strong> Gratuita </strong>
+              </h3>
+            </ng-template>
+
+            <a
+              class="btn float-right btn-success"
+              href="mailto:martaperezbadala@gmail.com?subject=Primera Consulta Psicología"
+              >Solicitar</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!--Consultas Seguimiento-->
+    <div class="card-body" id="psicologiaSeguimiento">
+      <h3 class="card-title">Consultas de Seguimiento</h3>
+      <h6 class="lead card-subtitle">
+        <br />
+        Incluyen:
+        <br />
+        <ul>
+          <br />
+          <li>
+            Planificación de metas a corto plazo para posteriormente alcanzar
+            logros a largo plazo.
+          </li>
+          <br />
+          <li>
+            Escucha activa de las preocupaciones y limitaciones del cliente y
+            acompañamiento en la resolución de las mismas.
+          </li>
+        </ul>
+      </h6>
+      <br />
+      <div class="col" *ngFor="let plan of planes">
+        <div
+          class="card border-secondary mb-3"
+          *ngIf="
+            plan.area == 'SERVICIO DE PSICOLOGÍA' &&
+            plan.tipo == 'SENCILLO' &&
+            plan.subtitulo != 'Primera Consulta'
+          "
+        >
+          <div class="card-header text-success">{{ plan.area }}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ plan.nombre }}</h4>
+            <h5 class="card-subtitle text-warning">
+              {{ plan.subtitulo }}
+            </h5>
+            <br />
+            <p>{{ plan.descripcion }}</p>
+            <div *ngIf="plan.precio > 0; else gratuita">
+              <h3 class="card-text text-right mr-3">
+                <strong> {{ plan.precio }} &euro; </strong>
+              </h3>
+            </div>
+            <ng-template #gratuita>
+              <h3 class="card-text text-right mr-3">
+                <strong> Gratuita </strong>
+              </h3>
+            </ng-template>
+
+            <button class="btn float-right btn-success">Adquirir</button>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-secondary float-right" href="/planes#top"
+        >Volver Arriba</a
+      >
+    </div>
   </div>
 </div>

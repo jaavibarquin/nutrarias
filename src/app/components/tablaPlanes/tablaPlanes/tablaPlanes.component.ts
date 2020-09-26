@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+
 import { PlanI } from 'src/app/shared/models/planes.interface';
 import { PlanService } from 'src/app/auth/services/plan.service';
 import Swal from 'sweetalert2';
@@ -27,6 +28,7 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
   constructor(private planSvc: PlanService, public dialog: MatDialog) {}
   ngOnInit() {
     this.planSvc
@@ -76,13 +78,20 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
     });
   }
   onEditPlan(plan: PlanI) {
-    window.alert('Se va a editar el post: \n' + plan.nombre);
+    this.openDialog(plan);
   }
   onNewPlan() {
     this.openDialog();
   }
 
-  openDialog(): void {
+  openDialog(plan?: PlanI): void {
+    const config = {
+      data: {
+        message: plan ? 'Editar plan ' : 'Crear Plan',
+        content: plan,
+      },
+    };
+    // crear nuevo
     const dialogRef = this.dialog.open(ModalComponent);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result ${result}`);

@@ -9,11 +9,12 @@ import { PostI } from 'src/app/shared/models/post.interface';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
+  format: string = 'dd/MM/yyyy HH:mma ';
   public post$: Observable<PostI>;
   constructor(private actRoute: ActivatedRoute, private postSvc: PostService) {}
 
   ngOnInit() {
-    const idPost = this.actRoute.snapshot.params.id;
-    this.post$ = this.postSvc.getOnePost(idPost);
+    const id = this.actRoute.snapshot.params.id;
+    this.post$ = this.postSvc.getOnePost(id);
   }
 }

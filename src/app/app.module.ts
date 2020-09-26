@@ -26,6 +26,7 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewPostComponent } from './components/posts/new-post/new-post.component';
+import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
 import { MaterialModule } from './material.module';
 import { ModalComponent } from './shared/modal/modal.component';
 @NgModule({
@@ -34,6 +35,7 @@ import { ModalComponent } from './shared/modal/modal.component';
     NavibarComponent,
     FooterComponent,
     NewPostComponent,
+    EditPostComponent,
     PostComponent,
     ModalComponent,
   ],

@@ -286,7 +286,7 @@
               role="tabpanel"
               aria-labelledby="v-pills-servicios-tab"
             >
-              <ul class="lead card-body" style="font-size: 115%">
+              <ul class="lead card-body" style="font-size: 150%">
                 <li>
                   <a [routerLink]="['/planes']" fragment="nutricionSencillo"
                     >Plan de Seguimiento Sencillo</a
@@ -314,7 +314,7 @@
               role="tabpanel"
               aria-labelledby="v-pills-contacto-tab"
             >
-              <p class="lead card-body" style="font-size: 115%">
+              <p class="lead card-body" style="font-size: 150%">
                 - Teléfono y WhatsApp: &nbsp;
                 <a href="tel:670358942" class="card-link"> 670 35 89 42</a>
                 <br />
@@ -603,7 +603,7 @@
               role="tabpanel"
               aria-labelledby="v-pills-servicios-tab"
             >
-              <ul class="lead card-body" style="font-size: 115%">
+              <ul class="lead card-body" style="font-size: 150%">
                 <li>
                   <a
                     [routerLink]="['/planes']"
@@ -637,7 +637,7 @@
               role="tabpanel"
               aria-labelledby="v-pills-contacto-tab"
             >
-              <p class="lead card-body" style="font-size: 115%">
+              <p class="lead card-body" style="font-size: 150%">
                 - Teléfono y WhatsApp: &nbsp;
                 <a href="tel:664692115" class="card-link"> 664 69 21 15</a>
                 <br />
@@ -654,6 +654,290 @@
                     Raúl Salazar Ruiz de Dulanto (34664692115)</a
                   ></small
                 >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Marta -->
+  <div class="card mb-3 ml-1 mr-1" id="psicologia">
+    <div class="card">
+      <h3 class="card-header">Marta Pérez Badalá</h3>
+      <div class="card-body">
+        <h5 class="card-title">Psicóloga</h5>
+      </div>
+
+      <!-- Small Screens-->
+      <div class="d-block d-sm-none">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <img
+                class="float-left"
+                style="max-width: 150%"
+                src="/assets/img/fotomarta_opt.png"
+                alt="Card image"
+              />
+            </div>
+            <div class="col">
+              <div
+                class="nav flex-nav nav-pills"
+                id="v-pills-tab"
+                role="tablist"
+                aria-orientation="vertical"
+              >
+                <a
+                  class="nav-link active"
+                  id="v-pills-formacion-tab"
+                  data-toggle="pill"
+                  href="#formacionMarta"
+                  role="tab"
+                  aria-controls="v-pills-formacion"
+                  aria-selected="true"
+                  >Formación</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-experiencia-tab"
+                  data-toggle="pill"
+                  href="#experienciaMarta"
+                  role="tab"
+                  aria-controls="v-pills-experiencia"
+                  aria-selected="false"
+                  >Experiencia</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-servicios-tab"
+                  data-toggle="pill"
+                  href="#serviciosMarta"
+                  role="tab"
+                  aria-controls="v-pills-servicios"
+                  aria-selected="false"
+                  >Servicios</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-contacto-tab"
+                  data-toggle="pill"
+                  href="#contactoMarta"
+                  role="tab"
+                  aria-controls="v-pills-contacto"
+                  aria-selected="false"
+                  >Contacto</a
+                >
+              </div>
+            </div>
+
+            <div class="tab-content" id="v-pills-tabContent">
+              <!-- Texto Formacion-->
+              <div
+                class="tab-pane fade show active"
+                id="formacionMarta"
+                role="tabpanel"
+                aria-labelledby="v-pills-formacion-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  {{ textoMarta1 }}
+                  <br />
+                  <br />
+                  {{ textoMarta2 }}
+                </p>
+              </div>
+              <!-- Texto Experiencia-->
+              <div
+                class="tab-pane fade"
+                id="experienciaMarta"
+                role="tabpanel"
+                aria-labelledby="v-pills-experiencia-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  {{ textoMarta3 }}
+                </p>
+              </div>
+              <!-- Texto Servicios-->
+              <div
+                class="tab-pane fade"
+                id="serviciosMarta"
+                role="tabpanel"
+                aria-labelledby="v-pills-servicios-tab"
+              >
+                <ul class="lead card-body" style="font-size: 115%">
+                  <li>
+                    <p>
+                      <a [routerLink]="['/planes']" fragment="psicologia"
+                        >Primera Consulta</a
+                      >
+                      <br />
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <a
+                        [routerLink]="['/planes']"
+                        fragment="psicologiaSeguimiento"
+                        >Consultas de Seguimiento</a
+                      >
+                      <br />
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- Texto Contacto -->
+              <div
+                class="tab-pane fade"
+                id="contactoMarta"
+                role="tabpanel"
+                aria-labelledby="v-pills-contacto-tab"
+              >
+                <p class="lead card-body" style="font-size: 115%">
+                  - Teléfono y WhatsApp: &nbsp;
+                  <a href="tel:634436844" class="card-link"> 634 43 68 44</a>
+                  <br />
+                  <br />
+                  - Correo electrónico: &nbsp;
+                  <a href="mailto:martaperezbadala@gmail.com" class="card-link">
+                    martaperezbadala@gmail.com</a
+                  >
+                  <br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Big Screens-->
+      <div class="d-none d-sm-block">
+        <img
+          style="float: left; max-height: 400px; min-width: 200px"
+          src="/assets/img/fotomarta_opt.png"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <div
+            class="nav flex-nav nav-pills justify-content-end"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <a
+              class="nav-link active"
+              id="v-pills-formacion-tab"
+              data-toggle="pill"
+              href="#formacionMarta1"
+              role="tab"
+              aria-controls="v-pills-formacion"
+              aria-selected="true"
+              >Formación</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-experiencia-tab"
+              data-toggle="pill"
+              href="#experienciaMarta1"
+              role="tab"
+              aria-controls="v-pills-experiencia"
+              aria-selected="false"
+              >Experiencia</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-servicios-tab"
+              data-toggle="pill"
+              href="#serviciosMarta1"
+              role="tab"
+              aria-controls="v-pills-servicios"
+              aria-selected="false"
+              >Servicios</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-contacto-tab"
+              data-toggle="pill"
+              href="#contactoMarta1"
+              role="tab"
+              aria-controls="v-pills-contacto"
+              aria-selected="false"
+              >Contacto</a
+            >
+          </div>
+
+          <div class="tab-content" id="v-pills-tabContent">
+            <!-- Texto Formacion-->
+            <div
+              class="tab-pane fade show active"
+              id="formacionMarta1"
+              role="tabpanel"
+              aria-labelledby="v-pills-formacion-tab"
+            >
+              <p class="lead card-body" style="font-size: 115%">
+                {{ textoMarta1 }}
+                <br />
+                <br />
+                {{ textoMarta2 }}
+              </p>
+            </div>
+            <!-- Texto Experiencia-->
+            <div
+              class="tab-pane fade"
+              id="experienciaMarta1"
+              role="tabpanel"
+              aria-labelledby="v-pills-experiencia-tab"
+            >
+              <p class="lead card-body" style="font-size: 115%">
+                {{ textoMarta3 }}
+              </p>
+            </div>
+
+            <!-- Texto Servicios-->
+            <div
+              class="tab-pane fade"
+              id="serviciosMarta1"
+              role="tabpanel"
+              aria-labelledby="v-pills-servicios-tab"
+            >
+              <ul class="lead card-body" style="font-size: 150%">
+                <li>
+                  <p>
+                    <a [routerLink]="['/planes']" fragment="psicologia"
+                      >Primera Consulta</a
+                    >
+                    <br />
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <a
+                      [routerLink]="['/planes']"
+                      fragment="psicologiaSeguimiento"
+                      >Consultas de Seguimiento</a
+                    >
+                    <br />
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <!-- Texto Contacto -->
+            <div
+              class="tab-pane fade"
+              id="contactoMarta1"
+              role="tabpanel"
+              aria-labelledby="v-pills-contacto-tab"
+            >
+              <p class="lead card-body" style="font-size: 150%">
+                - Teléfono y WhatsApp: &nbsp;
+                <a href="tel:634436844" class="card-link"> 634 43 68 44</a>
+                <br />
+                <br />
+                - Correo electrónico: &nbsp;
+                <a href="mailto:martaperezbadala@gmail.com" class="card-link">
+                  martaperezbadala@gmail.com</a
+                >
+                <br />
               </p>
             </div>
           </div>

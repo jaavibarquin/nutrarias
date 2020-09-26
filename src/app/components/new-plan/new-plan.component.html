@@ -3,12 +3,21 @@
     <!--Id del plan-->
     <mat-form-field>
       <mat-label>Introduce el ID</mat-label>
-      <input matInput type="text" placeholder="Ej: NUT-SEN-001" [formControl]="uid" />
+      <input
+        matInput
+        type="text"
+        placeholder="Ej: NUT-SEN-001"
+        formControlName="uid"
+      />
     </mat-form-field>
     <!--Area del Plan-->
     <mat-form-field>
       <mat-label>Area del Post</mat-label>
-      <mat-select placeholder="Selecciona el Área" multiple [formControl]="area">
+      <mat-select
+        placeholder="Selecciona el Área"
+        multiple
+        formControlName="area"
+      >
         <mat-option value="SERVICIO DE NUTRICIÓN"
           >SERVICIO DE NUTRICIÓN</mat-option
         >
@@ -23,7 +32,11 @@
     <!--Tipo del post-->
     <mat-form-field>
       <mat-label>Tipo de Post</mat-label>
-      <mat-select placeholder="Selecciona el Tipo" multiple [formControl]="tipo>
+      <mat-select
+        placeholder="Selecciona el Tipo"
+        multiple
+        formControlName="tipo"
+      >
         <mat-option value="SENCILLO">SENCILLO</mat-option>
         <mat-option value="TRIMESTRAL">TRIMESTRAL</mat-option>
         <mat-option value="ONLINE">ONLINE</mat-option>
@@ -33,23 +46,42 @@
     <!--Titulo del Plan-->
     <mat-form-field>
       <mat-label>Título del Plan</mat-label>
-      <input matInput placeholder="Introduce el nombre" type="text"[formControl]="nombre" />
+      <input
+        matInput
+        placeholder="Introduce el nombre"
+        type="text"
+        formControlName="nombre"
+      />
     </mat-form-field>
     <!--Subtitulo del post-->
     <mat-form-field>
       <mat-label>Subtítulo del Plan</mat-label>
-      <input matInput placeholder="Introduce el subtítulo" type="text" [formControl]="subtitulo" />
+      <input
+        matInput
+        placeholder="Introduce el subtítulo"
+        type="text"
+        formControlName="subtitulo"
+      />
     </mat-form-field>
     <!--Precio del Post-->
     <mat-form-field appearance="fill">
       <mat-label>Precio</mat-label>
-      <input matInput type="number" class="example-right-align"[formControl]="precio" />
+      <input
+        matInput
+        type="number"
+        class="example-right-align"
+        formControlName="precio"
+      />
       <span matSuffix>.00 &nbsp;&euro;</span>
     </mat-form-field>
     <!--Descripcion del plan-->
     <mat-form-field appearance="fill">
       <mat-label>Descripcion</mat-label>
-      <textarea matInput placeholder="Opcional" [formControl]="descripcion"></textarea>
+      <textarea
+        matInput
+        placeholder="Opcional"
+        formControlName="descripcion"
+      ></textarea>
     </mat-form-field>
   </form>
 

@@ -6,31 +6,27 @@
   <a [routerLink]="['/blog']"> &larr;&nbsp;Volver atrás </a>
 
   <div class="card mb-3 mt-3" style="min-width: fit-content">
-    <h3 class="card-header">
-      {{ post.headerPost }}
-    </h3>
+    <h1 class="display-3 card-header">{{ post.headerPost }}</h1>
     <div class="card-body">
-      <h5 class="card-title">{{ post.titlePost }}</h5>
-      <h6 class="card-subtitle text-muted">{{ post.subtitlePost }}</h6>
+      <h2 class="card-title">{{ post.titlePost }}</h2>
+      <h4 class="card-subtitle text-muted">{{ post.subtitlePost }}</h4>
     </div>
-    <img
-      style="height: 400px; display: block"
-      src="{{ post.imagePost }}"
-      alt="Post image"
-    />
+    <div *ngIf="post.imagePost">
+      <img
+        style="width: 100%; display: block"
+        src="{{ post.imagePost }}"
+        alt="Post image"
+      />
+    </div>
     <div class="card-body">
-      <p class="card-text">
+      <p class="lead card-text">
         {{ post.contentPost }}
       </p>
     </div>
-    <div class="card-body">
-      <mat-chip-list aria-label="Tags">
-        <mat-chip *ngFor="let tag of post.tagsPost" [ngClass]="tag">{{
-          tag
-        }}</mat-chip>
-      </mat-chip-list>
+
+    <div class="card-footer text-muted">
+      Publicado el &nbsp;{{ post.datePost | date: format }}
     </div>
-    <div class="card-footer text-muted">{{ post.datePost }}</div>
   </div>
 </div>
 <ng-template #loading>

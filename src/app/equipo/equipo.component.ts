@@ -51,15 +51,12 @@ export class EquipoComponent implements OnInit {
     'modalidades deportivas, entre las que destacan Atletismo y Fútbol, como competidor, entrenador ' +
     'y preparador físico. Esto le ha posibilitado en los últimos años dirigir grupos o equipos de ' +
     'entrenamiento, transmitiéndoles su pasión por el deporte.';
-  textoIgnacio1 =
-    'Ignacio es graduado en Psicología por la Universidad Europea del Atlántico (Santander), llevando ' +
-    'a cabo uno de los cursos académicos en la Uniwersytet Opolsky (Opole, Polonia). ';
-
-  textoIgnacio2 =
-    'Actualmente se encuentra completando el Máster en Psicología General Sanitaria, el cual ' +
-    'le especializará en atención primaria en el ámbito psicológico de la salud. En el plano ' +
-    'profesional comenzó en el centro de rehabilitación, prevención y optimización cognitiva, ' +
-    'Método Sáncal, cuya línea base es la terapia mediante la práctica musical. Si crees o ' +
-    'sabes que tienes algún problema o inquietud, necesitas motivación o un cambio en tu vida, ' +
-    'Ignacio te escuchará y ayudará haciendo uso de una terapia moderna, útil y personalizada.';
+  textoMarta1 = `Marta es graduada en Psicología por la Universidad Europea del Atlántico (Santander), donde también realizó la especialidad de psicología clínica. \n
+  Actualmente está cursando el máster de Psicología General Sanitaria en la Universidad Europea de Madrid. \n
+  Ha completado su formación con diversos cursos y talleres impartidos por el COP (Colegio Oficial de Psicólogos). \n  `;
+  textoMarta3 = `Ha realizado prácticas en el centro Sociosanitario Medicaneceli (Soto de la Marina), una organización
+    creada para atender a personas en situación de dependencia y vulnerabilidad social. Además, pertenece a la Asociación
+    Española contra el Cáncer, ofreciendo apoyo y acompañamiento a los pacientes oncológicos. `;
+  textoMarta2 = `A través del Asesoramiento Personal o Life coach,
+  acompaña a las personas en sus proyectos de vida, sus objetivos, la misión personal de cada uno, las estrategias para el cambio etc. `;
 }

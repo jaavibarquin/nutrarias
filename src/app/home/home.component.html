@@ -1,5 +1,5 @@
 <div class="col-md-10 mx-auto mt-4">
-  <div class="card mb-3 ml-2 mr-2">
+  <div class="card mb-3 ml-1 mr-1">
     <div id="carouselID" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselID" data-slide-to="0" class="active"></li>
@@ -121,7 +121,8 @@
   </div>
 
   <div class="row">
-    <div class="col ml-2 mr-2" style="min-width: 47vh; max-width: 100vh">
+    <div class="col-lg-6" style="min-width: 40; max-width: 100vh">
+      <!--Video Roberto-->
       <div class="card embed-responsive embed-responsive-16by9 mb-3">
         <iframe
           width="560"
@@ -133,79 +134,123 @@
         ></iframe>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="card mb-2 ml-2 mr-2" style="min-width: 45vh">
-        <div class="card-body">
-          <h4 class="card-title">Mantente al día</h4>
-          <p class="card-text">
-            Síguenos en nuestras redes sociales para estar informado de todas
-            nuestras novedades.
-          </p>
-          <div class="text-center">
-            <a
-              href="https://instagram.com/nutrarias"
-              class="card-link"
-              target="_blank"
-              ><img
-                src="assets/img/instagramlogo.png"
-                width="40"
-                height="40"
-                alt="Instagram"
-                title="@nutrarias"
-            /></a>
-            <a
-              href="https://twitter.com/nutrariashealth"
-              class="card-link"
-              target="_blank"
-              ><img
-                src="assets/img/twitterlogo.png"
-                width="40"
-                height="40"
-                alt="Twitter"
-                title="@nutrariashealth"
-            /></a>
-            <a
-              href="https://www.facebook.com/Nutrarias"
-              class="card-link"
-              target="_blank"
-              ><img
-                src="assets/img/facebooklogo.png"
-                width="40"
-                height="40"
-                alt="Facebook"
-                title="Nutrarias Health"
-            /></a>
-            <a href="mailto:nutrarias@gmail.com" class="card-link"
-              ><img
-                src="assets/img/gmaillogo.png"
-                width="50"
-                height="40"
-                alt="Gmail"
-                title="Correo a NutrariasHealth"
-            /></a>
-          </div>
-        </div>
+    <div class="col-lg-6" style="min-width: 40; max-width: 100vh">
+      <!--Video Raul-->
+      <div class="card embed-responsive embed-responsive-16by9 mb-3">
+        <iframe
+          width="315"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/lGFtOX4Duvc"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;loop"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
-    <div class="col">
-      <div class="card mb-2 ml-2 mr-2">
-        <div class="card-body">
-          <h4 class="card-title">Adquiere tu Plan</h4>
-          <p class="card-text">
-            Obtén el plan que mejor se ajuste a tus necesidades.
-          </p>
-          <div class="text-center">
-            <a [routerLink]="['/metodo']" fragment="nutricion" class="card-link"
-              >Servicio de Nutrición</a
-            >
-            <a
-              [routerLink]="['/metodo']"
-              fragment="entrenamiento"
-              class="card-link"
-              >Entrenamiento Personal</a
-            >
+    <div class="col-lg-6" style="min-width: 40; max-width: 100vh">
+      <!--Video Marta-->
+      <div class="card embed-responsive embed-responsive-16by9 mb-3">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/og0Hvvkzy8o"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="col-lg-5 mr-2 ml-2">
+      <div class="row text-center">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Mantente al día</h4>
+              <p class="card-text">
+                Síguenos en nuestras redes sociales para estar informado de
+                todas nuestras novedades.
+              </p>
+              <div class="text-center">
+                <a
+                  href="https://instagram.com/nutrarias"
+                  class="card-link"
+                  target="_blank"
+                  ><img
+                    src="assets/img/instagramlogo.png"
+                    width="40"
+                    height="40"
+                    alt="Instagram"
+                    title="@nutrarias"
+                /></a>
+                <a
+                  href="https://twitter.com/nutrariashealth"
+                  class="card-link"
+                  target="_blank"
+                  ><img
+                    src="assets/img/twitterlogo.png"
+                    width="40"
+                    height="40"
+                    alt="Twitter"
+                    title="@nutrariashealth"
+                /></a>
+                <a
+                  href="https://www.facebook.com/Nutrarias"
+                  class="card-link"
+                  target="_blank"
+                  ><img
+                    src="assets/img/facebooklogo.png"
+                    width="40"
+                    height="40"
+                    alt="Facebook"
+                    title="Nutrarias Health"
+                /></a>
+                <a href="mailto:nutrarias@gmail.com" class="card-link"
+                  ><img
+                    src="assets/img/gmaillogo.png"
+                    width="50"
+                    height="40"
+                    alt="Gmail"
+                    title="Correo a NutrariasHealth"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mt-3" style="min-width: 325px">
+              <div class="card-body">
+                <h4 class="card-title">Adquiere tu Plan</h4>
+                <p class="card-text">
+                  Obtén el plan que mejor se ajuste a tus necesidades.
+                </p>
+                <div class="row">
+                  <div class="col text-center">
+                    <a
+                      [routerLink]="['/metodo']"
+                      fragment="nutricion"
+                      class="card-link"
+                      >Servicio de Nutrición</a
+                    >
+                  </div>
+                  <div class="col text-center">
+                    <a
+                      [routerLink]="['/metodo']"
+                      fragment="entrenamiento"
+                      class="card-link"
+                      >Entrenamiento Personal</a
+                    >
+                  </div>
+                  <div class="col text-center">
+                    <a
+                      [routerLink]="['/equipo']"
+                      fragment="psicologia"
+                      class="card-link"
+                      >Servicio de Psicología</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -14,13 +14,12 @@ import { ModalComponent } from 'src/app/shared/modal/modal.component';
   styleUrls: ['./list-posts.component.css'],
 })
 export class ListPostsComponent implements AfterViewInit, OnInit {
+  format: string = 'dd/MM/yyyy HH:mma';
   displayedColumns: string[] = [
-    'idPost',
     'headerPost',
     'titlePost',
     'subtitlePost',
     'datePost',
-    'tagsPost',
     'acciones',
   ];
   dataSource = new MatTableDataSource();
@@ -80,14 +79,22 @@ export class ListPostsComponent implements AfterViewInit, OnInit {
     });
   }
   onEditPost(post: PostI) {
-    window.alert('Se va a borrar el post perra' + post.titlePost);
+    this.openDialog(post);
   }
   onNewPost() {
     this.openDialog();
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ModalComponent);
+  openDialog(post?: PostI): void {
+    //editar
+    const config = {
+      data: {
+        message: post ? 'Editar post' : 'Crear Post',
+        content: post,
+      },
+    };
+    //crear nuevo
+    const dialogRef = this.dialog.open(ModalComponent, config);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result ${result}`);
     });
