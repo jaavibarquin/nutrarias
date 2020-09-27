@@ -5,14 +5,14 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-
 import { Observable, of } from 'rxjs';
-import { User } from 'src/app/shared/models/user.interface';
+import { User } from '../../shared/models/user.interface';
 import { switchMap } from 'rxjs/operators';
-import { RoleValidator } from '../helpers/roleValidator';
-import { PlanI } from 'src/app/shared/models/planes.interface';
+import { RoleValidator } from '../../auth/helpers/roleValidator';
+import { PlanI } from '../../shared/models/planes.interface';
 import { Plan } from '../../shared/models/plan.model';
-import { finalize, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+
 @Injectable({ providedIn: 'root' })
 export class PlanService extends RoleValidator {
   public user$: Observable<User>;
@@ -29,6 +29,11 @@ export class PlanService extends RoleValidator {
         return of(null);
       })
     );
+  }
+  public createPlan(plan: PlanI) {
+    return this.planesCollection
+      .doc(`planes/${plan.uid}`)
+      .set(plan, { merge: true });
   }
 
   async nuevoPlan(

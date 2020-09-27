@@ -12,3 +12,8 @@ table {
   display: flex;
   margin: 1rem;
 }
+.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary {
+  color: #f9d907;
+}

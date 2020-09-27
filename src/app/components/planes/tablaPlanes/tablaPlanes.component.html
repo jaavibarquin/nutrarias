@@ -1,3 +1,26 @@
+<button
+  type="button"
+  class="btn btn-outline-danger ml-3"
+  (click)="modal.open(contenido)"
+>
+  Crear Plan
+</button>
+<ng-template #contenido let-modal>
+  <div class="modal-header">
+    <h2 class="modal-title">Añadir Plan</h2>
+    <button class="close" aria-label="close" (click)="modal.dismiss()">
+      <span> <mat-icon>close</mat-icon></span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Cuerpo del modal que no me deja meter el componente
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="modal.close()">
+      ok
+    </button>
+  </div>
+</ng-template>
 <div class="mat-elevation-z8">
   <mat-form-field>
     <mat-label>Buscar un Plan</mat-label>
@@ -13,6 +36,10 @@
     <div class="container-btn-new">
       <button mat-stroked-button (click)="onNewPlan()">
         <mat-icon>note_add</mat-icon> &nbsp; Nuevo Post
+      </button>
+      &nbsp;
+      <button mat-stroked-button (click)="modal.open(contenido)">
+        <mat-icon>close</mat-icon> &nbsp; Cerrar Todos
       </button>
     </div>
     <table mat-table [dataSource]="dataSource" matSort>

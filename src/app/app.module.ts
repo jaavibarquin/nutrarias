@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 /*  Firebase */
 import { AngularFireModule } from '@angular/fire';
@@ -30,6 +30,8 @@ import { EditPostComponent } from './components/posts/edit-post/edit-post.compon
 import { MaterialModule } from './material.module';
 import { ModalComponent } from './shared/modal/modal.component';
 import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +47,7 @@ import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
@@ -55,6 +58,7 @@ import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component
     BrowserAnimationsModule,
     MaterialModule,
     BlogModule,
+    NgbModule,
   ],
   providers: [
     AuthService,
@@ -62,7 +66,9 @@ import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component
     CanAdminGuard,
     CanSuscribeGuard,
     { provide: BUCKET, useValue: 'gs://nutrariashealth.appspot.com' },
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackDrop: true } },
   ],
+  entryComponents: [ModalPlanesComponent, ModalComponent],
 
   bootstrap: [AppComponent],
 })

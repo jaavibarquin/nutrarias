@@ -6,7 +6,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { ListPostsComponent } from 'src/app/components/posts/list-posts/list-posts.component';
-import { TablaPlanesComponent } from 'src/app/components/tablaPlanes/tablaPlanes/tablaPlanes.component';
+import { TablaPlanesComponent } from '../components/planes/tablaPlanes/tablaPlanes.component';
 @NgModule({
   declarations: [AdminComponent, ListPostsComponent, TablaPlanesComponent],
   imports: [

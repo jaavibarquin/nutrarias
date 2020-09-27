@@ -3,11 +3,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
-import { PlanI } from 'src/app/shared/models/planes.interface';
-import { PlanService } from 'src/app/auth/services/plan.service';
+import { PlanI } from '../../../shared/models/planes.interface';
+import { PlanService } from '../plan.service';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalPlanesComponent } from 'src/app/shared/modalPlanes/modalPlanes.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalPlanesComponent } from '../../../shared/modalPlanes/modalPlanes.component';
 @Component({
   selector: 'app-tablaPlanes',
   templateUrl: './tablaPlanes.component.html',
@@ -29,7 +30,11 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private planSvc: PlanService, public dialog: MatDialog) {}
+  constructor(
+    private planSvc: PlanService,
+    public dialog: MatDialog,
+    public modal: NgbModal
+  ) {}
   ngOnInit() {
     this.planSvc
       .getAllPlanes()
@@ -94,8 +99,10 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
     };
     // crear nuevo
     const dialogRef = this.dialog.open(ModalPlanesComponent, config);
+
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog TABLAPLANES result ${result}`);
+      console.log(`Dialog result: ${result}`);
     });
   }
+  onCloseAll() {}
 }

@@ -4,7 +4,7 @@ import { CanEditGuard } from './auth/guards/can-edit.guard';
 import { CanSuscribeGuard } from './auth/guards/can-suscribe.guard';
 import { CanAdminGuard } from './auth/guards/can-admin.guard';
 import { PostComponent } from './components/posts/post/post.component';
-
+import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component';
 const routes: Routes = [
   {
     path: '',
@@ -86,6 +86,10 @@ const routes: Routes = [
   {
     path: 'blog/post/:id',
     component: PostComponent,
+  },
+  {
+    path: 'admin/modalPlanes',
+    component: ModalPlanesComponent,
   },
 ];
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanService } from 'src/app/auth/services/plan.service';
+import { PlanService } from 'src/app/components/planes/plan.service';
 import { PlanI } from 'src/app/shared/models/planes.interface';
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';

@@ -9,7 +9,35 @@
       ordenador, o en el móvil orientado horizontal.
     </p>
   </div>
-  <div class="row">
+  <div class="row ml-2 mr-2">
+    <div class="col">
+      <div class="row">
+        <!--TABLAPLANES-->
+        <div
+          class="card mb-4 border-primary"
+          id="listaPlanes"
+          style="min-width: 50vh"
+        >
+          <h4 class="card-header">Tabla de Planes</h4>
+          <div>
+            <app-tablaPlanes></app-tablaPlanes>
+          </div>
+        </div>
+      </div>
+      <!-- Anadir posts blog-->
+      <div class="row">
+        <div
+          class="card border-primary mb-4"
+          id="anadirPost"
+          style="min-width: min-content"
+        >
+          <h4 class="card-header">Lista de Posts en el Blog</h4>
+          <div>
+            <app-list-posts></app-list-posts>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--Anadir Tarifas-->
     <div class="col">
       <div class="card mb-3 border-primary">
@@ -128,32 +156,6 @@
               </button>
             </div>
           </form>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <!--TABLAPLANES-->
-      <div
-        class="card mb-4 border-primary"
-        id="listaPlanes"
-        style="min-width: 50vh"
-      >
-        <h4 class="card-header">Tabla de Planes</h4>
-        <div>
-          <app-tablaPlanes></app-tablaPlanes>
-        </div>
-      </div>
-    </div>
-    <!-- Anadir posts blog-->
-    <div class="col">
-      <div
-        class="card border-primary mb-4"
-        id="anadirPost"
-        style="min-width: min-content"
-      >
-        <h4 class="card-header">Añadir Post al Blog</h4>
-        <div>
-          <app-list-posts></app-list-posts>
         </div>
       </div>
     </div>
