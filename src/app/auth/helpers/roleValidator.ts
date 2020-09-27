@@ -1,15 +1,15 @@
-import { User } from '/Users/barquinj/Projects/RAMFITweb/src/app/shared/models/user.interface';
+import { UserI } from '../../shared/models/user.interface';
 
 export class RoleValidator {
-  isSuscriptor(user: User): boolean {
+  isSuscriptor(user: UserI): boolean {
     return user.role == 'SUSCRIPTOR';
   }
 
-  isEditor(user: User): boolean {
+  isEditor(user: UserI): boolean {
     return user.role == 'EDITOR';
   }
 
-  isAdmin(user: User): boolean {
+  isAdmin(user: UserI): boolean {
     return user.role == 'ADMIN';
   }
 }

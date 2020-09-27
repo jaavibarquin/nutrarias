@@ -5,6 +5,7 @@ import { CanSuscribeGuard } from './auth/guards/can-suscribe.guard';
 import { CanAdminGuard } from './auth/guards/can-admin.guard';
 import { PostComponent } from './components/posts/post/post.component';
 import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 const routes: Routes = [
   {
     path: '',
@@ -90,6 +91,10 @@ const routes: Routes = [
   {
     path: 'admin/modalPlanes',
     component: ModalPlanesComponent,
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
   },
 ];
 

@@ -2,7 +2,7 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 export type Roles = 'BASICO' | 'SUSCRIPTOR' | 'EDITOR' | 'ADMIN';
 
-export interface User {
+export interface UserI {
   uid: string;
   email: string;
   displayName?: string;

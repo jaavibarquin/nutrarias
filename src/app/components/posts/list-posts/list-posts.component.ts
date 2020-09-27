@@ -86,17 +86,47 @@ export class ListPostsComponent implements AfterViewInit, OnInit {
   }
 
   openDialog(post?: PostI): void {
-    //editar
     const config = {
       data: {
-        message: post ? 'Editar post' : 'Crear Post',
+        message: post ? 'Editar Post' : 'Crear Post',
         content: post,
       },
     };
-    //crear nuevo
+
     const dialogRef = this.dialog.open(ModalComponent, config);
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result ${result}`);
+      console.log(`Dialog Result Posts ${result}`);
+    });
+  }
+  onDeleteImg(post: PostI) {
+    Swal.fire({
+      title:
+        '¿Estás seguro de que deseas borrar la imagen del post: \n ' +
+        post.titlePost +
+        ' ?',
+      text: '¡Si la borras la tendrás que volver a subir!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: '¡Si, eliminar foto!',
+      cancelButtonText: '¡No, cancelar!',
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.value) {
+        this.postSvc.deleteImage(post).then(() => {
+          Swal.fire(
+            '¡Eliminada!',
+            'La imagen se ha eliminado.',
+            'success'
+          ).catch((error) => {
+            Swal.fire(
+              '¡Error!',
+              'No se ha podido eliminar la foto, vuelve a intentarlo más tarde. \n' +
+                error,
+              'error'
+            );
+          });
+        });
+      }
     });
   }
 }

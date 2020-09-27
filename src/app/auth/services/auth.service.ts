@@ -1,5 +1,5 @@
 import { RoleValidator } from 'src/app/auth/helpers/roleValidator';
-import { User } from 'src/app/shared/models/user.interface';
+import { UserI } from 'src/app/shared/models/user.interface';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
@@ -12,14 +12,14 @@ import {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService extends RoleValidator {
-  public user$: Observable<User>;
+  public user$: Observable<UserI>;
   public userData: Observable<firebase.User>;
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
     super();
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+          return this.afs.doc<UserI>(`users/${user.uid}`).valueChanges();
         }
         return of(null);
       })
@@ -27,7 +27,7 @@ export class AuthService extends RoleValidator {
     this.userData = afAuth.authState;
   }
 
-  async login(email: string, password: string): Promise<User> {
+  async login(email: string, password: string): Promise<UserI> {
     try {
       const { user } = await this.afAuth.signInWithEmailAndPassword(
         email,
@@ -48,16 +48,16 @@ export class AuthService extends RoleValidator {
     apellido2: string,
     birthdate: Date,
     phone: string
-  ): Promise<User> {
+  ): Promise<UserI> {
     try {
       const { user } = await this.afAuth.createUserWithEmailAndPassword(
         email,
         password
       );
-      const userRef: AngularFirestoreDocument<User> = this.afs.doc(
+      const userRef: AngularFirestoreDocument<UserI> = this.afs.doc(
         `users/${user.uid}`
       );
-      const data: User = {
+      const data: UserI = {
         uid: user.uid,
         email: user.email,
         emailVerified: user.emailVerified,
@@ -97,7 +97,7 @@ export class AuthService extends RoleValidator {
     }
   }
 
-  async logInWithGoogle(): Promise<User> {
+  async logInWithGoogle(): Promise<UserI> {
     try {
       const { user } = await this.afAuth.signInWithPopup(
         new auth.GoogleAuthProvider()
@@ -109,11 +109,11 @@ export class AuthService extends RoleValidator {
     }
   }
 
-  private updateData(user: User) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
+  private updateData(user: UserI) {
+    const userRef: AngularFirestoreDocument<UserI> = this.afs.doc(
       `users/${user.uid}`
     );
-    const data: User = {
+    const data: UserI = {
       uid: user.uid,
       email: user.email,
       emailVerified: user.emailVerified,

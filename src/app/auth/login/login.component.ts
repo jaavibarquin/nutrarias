@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
-import { User } from 'src/app/shared/models/user.interface';
+import { UserI } from 'src/app/shared/models/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     try {
       const user = await this.authSvc.login(email, password);
-      this.checkUserIsVerified(user);
+      this.checkUserIIsVerified(user);
     } catch (error) {
       window.alert(error);
     }
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     try {
       const user = await this.authSvc.logInWithGoogle();
       if (user) {
-        this.checkUserIsVerified(user);
+        this.checkUserIIsVerified(user);
       }
       this.router.navigate(['/home']);
     } catch (error) {
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private checkUserIsVerified(user: User) {
+  private checkUserIIsVerified(user: UserI) {
     if (user && user.emailVerified) {
       // comprobar que el email esta verificado
       //Redirect a home

@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User } from 'src/app/shared/models/user.interface';
+import { UserI } from 'src/app/shared/models/user.interface';
 
 @Component({
   selector: 'app-verification-email',
@@ -10,7 +10,7 @@ import { User } from 'src/app/shared/models/user.interface';
   styleUrls: ['./verification-email.component.css'],
 })
 export class VerificationEmailComponent implements OnDestroy {
-  public user$: Observable<User> = this.authSvc.afAuth.user;
+  public user$: Observable<UserI> = this.authSvc.afAuth.user;
 
   constructor(private authSvc: AuthService) {}
 

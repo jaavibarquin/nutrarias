@@ -23,46 +23,5 @@ export class AdminComponent implements OnInit {
 
   constructor(private router: Router, private planSvc: PlanService) {}
 
-  ngOnInit() {
-    this.planSvc.getPlanes().subscribe((data) => {
-      this.planes = data.map((e) => {
-        return {
-          id: e.payload.doc.id,
-          ...(e.payload.doc.data() as PlanI),
-        } as PlanI;
-      });
-    });
-  }
-
-  async onNewPlan() {}
-
-  // async onNewPlan() {
-  //   const {
-  //     uid,
-  //     area,
-  //     tipo,
-  //     nombre,
-  //     subtitulo,
-  //     precio,
-  //     descripcion,
-  //   } = this.nuevoPlanForm.value;
-  //   {
-  //     try {
-  //       const plan = await this.planSvc.nuevoPlan(
-  //         uid,
-  //         area,
-  //         tipo,
-  //         nombre,
-  //         subtitulo,
-  //         precio,
-  //         descripcion
-  //       );
-  //       if (plan) {
-  //         window.alert('Se ha añadido el plan nuevo correctamente.');
-  //       }
-  //     } catch (error) {
-  //       window.alert(error);
-  //     }
-  //   }
-  // }
+  ngOnInit() {}
 }

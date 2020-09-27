@@ -4,6 +4,7 @@ import { PlanI } from 'src/app/shared/models/planes.interface';
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { PageScrollService } from 'ngx-page-scroll-core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-planes',
@@ -11,7 +12,7 @@ import { PageScrollService } from 'ngx-page-scroll-core';
   styleUrls: ['./planes.component.css'],
 })
 export class PlanesComponent implements OnInit {
-  planes: PlanI[];
+  public planes$: Observable<PlanI[]>;
   constructor(
     private planSvc: PlanService,
     private pageScrollSvc: PageScrollService,
@@ -23,13 +24,6 @@ export class PlanesComponent implements OnInit {
       document: this.document,
       scrollTarget: '.theEnd',
     });
-    this.planSvc.getPlanes().subscribe((data) => {
-      this.planes = data.map((e) => {
-        return {
-          id: e.payload.doc.id,
-          ...(e.payload.doc.data() as PlanI),
-        } as PlanI;
-      });
-    });
+    this.planes$ = this.planSvc.getAllPlanes();
   }
 }

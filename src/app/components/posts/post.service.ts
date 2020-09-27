@@ -100,6 +100,9 @@ export class PostService {
   }
 
   public deleteImage(post: PostI) {
-    return this.postCollection.doc(post.id).update((post.imagePost = ''));
+    const postObj = post;
+    postObj.imagePost = '';
+    postObj.fileRef = '';
+    return this.postCollection.doc(post.id).update(postObj);
   }
 }

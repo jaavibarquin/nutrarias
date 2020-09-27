@@ -1,11 +1,19 @@
 <div class="mat-elevation-z8">
   <mat-form-field>
-    <mat-label>Buscar un Post</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Filtro" #input />
+    <mat-label class="ml-4">
+      <mat-icon>search</mat-icon>&nbsp;Buscar un Post</mat-label
+    >
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Filtro"
+      #input
+      class="ml-4"
+    />
   </mat-form-field>
   <div class="container-btn-new">
-    <button mat-stroked-button (click)="onNewPost()">
-      <mat-icon>note_add</mat-icon> &nbsp; Nuevo Post
+    <button mat-stroked-button (click)="onNewPost()" class="btn-primary">
+      <mat-icon>post_add</mat-icon> &nbsp; Nuevo Post
     </button>
   </div>
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -45,9 +53,18 @@
           (click)="onEditPost(element)"
         >
           <mat-icon>edit</mat-icon>
+          Editar
         </button>
         <button mat-stroked-button color="warn" (click)="onDeletePost(element)">
           <mat-icon>delete</mat-icon>
+        </button>
+        <br />
+        <button
+          mat-stroked-button
+          color="outline-primary"
+          (click)="onDeleteImg(element)"
+        >
+          Borrar Foto
         </button>
       </td>
     </ng-container>

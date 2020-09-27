@@ -52,7 +52,4 @@ export class EditPostComponent implements OnInit {
       datePost: this.post.datePost,
     });
   }
-  public borrarFoto(post: PostI) {
-    this.postSvc.deleteImage(post);
-  }
 }

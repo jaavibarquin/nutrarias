@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
-import { User } from 'src/app/shared/models/user.interface';
+import { UserI } from 'src/app/shared/models/user.interface';
 
 @Component({
   selector: 'app-register',
@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
         );
         if (user) {
           //Redirect a home
-          this.checkUserIsVerified(user);
+          this.checkUserIIsVerified(user);
         }
       } catch (error) {
         window.alert(error);
@@ -69,7 +69,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  private checkUserIsVerified(user: User) {
+  private checkUserIIsVerified(user: UserI) {
     if (user && user.emailVerified) {
       // comprobar que el email esta verificado
       //Redirect a home

@@ -1,8 +1,14 @@
-<h2 mat-dialog-title>{{ data.message }}</h2>
-
+<div mat-dialog-title class="mat-dialog-title">
+  <h1>
+    {{ data.message }}
+    <button mat-raised-button (click)="closeDialog()" class="float-right">
+      <mat-icon>close</mat-icon>
+    </button>
+  </h1>
+</div>
 <mat-dialog-content class="mat-dialog-content">
   <div *ngIf="data.content; else showNewForm">
-    <app-edit-plan [plan]="data.content"></app-edit-plan>
+    <app-edit-plan [plan]="data.content"> </app-edit-plan>
   </div>
   <ng-template #showNewForm>
     <app-new-plan></app-new-plan>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User } from '../models/user.interface';
+import { UserI } from '../models/user.interface';
 
 @Component({
   selector: 'app-navibar',
@@ -11,7 +11,7 @@ import { User } from '../models/user.interface';
 })
 export class NavibarComponent implements OnInit {
   public isLogged = false;
-  public user$: Observable<User> = this.authSvc.afAuth.user;
+  public user$: Observable<UserI> = this.authSvc.afAuth.user;
 
   constructor(private authSvc: AuthService, private router: Router) {}
 

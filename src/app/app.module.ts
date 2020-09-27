@@ -26,11 +26,12 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewPostComponent } from './components/posts/new-post/new-post.component';
+import { EditPlanComponent } from './components/planes/edit-plan/edit-plan.component';
+import { NewPlanComponent } from './components/planes/new-plan/new-plan.component';
 import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
 import { MaterialModule } from './material.module';
 import { ModalComponent } from './shared/modal/modal.component';
 import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component';
-import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavibarComponent,
     FooterComponent,
     NewPostComponent,
+    NewPlanComponent,
     EditPostComponent,
+    EditPlanComponent,
     PostComponent,
     ModalComponent,
     ModalPlanesComponent,
@@ -66,9 +69,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CanAdminGuard,
     CanSuscribeGuard,
     { provide: BUCKET, useValue: 'gs://nutrariashealth.appspot.com' },
-    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackDrop: true } },
   ],
-  entryComponents: [ModalPlanesComponent, ModalComponent],
 
   bootstrap: [AppComponent],
 })

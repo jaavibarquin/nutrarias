@@ -1,17 +1,6 @@
 <div class="new-plan-container">
   <div class="mat-form-container">
-    <form [formGroup]="newPlanForm" (ngSubmit)="addNewPlan(newPlanForm.value)">
-      <!--PlanID-->
-      <mat-form-field appearance="outline" class="mr-2">
-        <mat-label> Escribe el identificador del plan</mat-label>
-        <input
-          matInput
-          placeholder="ej: NUT-SEN-001"
-          type="text"
-          formControlName="uid"
-        />
-      </mat-form-field>
-      <br />
+    <form [formGroup]="editPlanForm" (ngSubmit)="editPlan(editPlanForm.value)">
       <!--Area-->
       <mat-form-field appearance="outline" class="mr-2">
         <mat-label>Selecciona el area del servicio:</mat-label>
@@ -84,16 +73,15 @@
         <textarea matInput rows="5" formControlName="descripcion"></textarea>
       </mat-form-field>
       <br />
-      <!-- form-group// -->
-      <!-- Boton submit-->
-      <div class="text-center">
+      <br />
+      <mat-dialog-actions align="center">
         <input
           type="submit"
           class="btn btn-success"
           value="Guardar"
           [mat-dialog-close]="true"
         />
-      </div>
+      </mat-dialog-actions>
     </form>
   </div>
 </div>

@@ -9,155 +9,27 @@
       ordenador, o en el móvil orientado horizontal.
     </p>
   </div>
-  <div class="row ml-2 mr-2">
-    <div class="col">
-      <div class="row">
-        <!--TABLAPLANES-->
-        <div
-          class="card mb-4 border-primary"
-          id="listaPlanes"
-          style="min-width: 50vh"
-        >
-          <h4 class="card-header">Tabla de Planes</h4>
-          <div>
-            <app-tablaPlanes></app-tablaPlanes>
-          </div>
-        </div>
-      </div>
-      <!-- Anadir posts blog-->
-      <div class="row">
-        <div
-          class="card border-primary mb-4"
-          id="anadirPost"
-          style="min-width: min-content"
-        >
-          <h4 class="card-header">Lista de Posts en el Blog</h4>
-          <div>
-            <app-list-posts></app-list-posts>
-          </div>
-        </div>
-      </div>
+  <!--TABLAPLANES-->
+  <div
+    class="card mb-4 border-primary"
+    id="listaPlanes"
+    style="min-width: min-content"
+  >
+    <h4 class="card-header">Tabla de Planes</h4>
+    <div>
+      <app-tablaPlanes></app-tablaPlanes>
     </div>
-    <!--Anadir Tarifas-->
-    <div class="col">
-      <div class="card mb-3 border-primary">
-        <h4 class="card-header">Tarifas</h4>
-        <div class="card-body">
-          <p class="lead">Añadir tarifa:</p>
-          <form [formGroup]="nuevoPlanForm" (ngSubmit)="onNewPlan()">
-            <!--PlanID-->
-            <div class="form-group">
-              <label for="id">&bull; Escribe el identificador del plan</label>
-              <input
-                type="text"
-                id="planID"
-                name="planID"
-                class="form-control"
-                placeholder="ej: NUT-SEN-001"
-                formControlName="uid"
-              />
-            </div>
-            <!--Area-->
-            <div class="form-group">
-              <label for="area"> &bull; Selecciona el area del servicio:</label>
-              <select
-                class="form-control"
-                id="areaPlan"
-                name="area"
-                formControlName="area"
-              >
-                <option selected="">Seleccionar Área</option>
-                <option value="SERVICIO DE NUTRICIÓN">
-                  SERVICIO DE NUTRICIÓN
-                </option>
-                <option value="SERVICIO DE ENTRENAMIENTO">
-                  SERVICIO DE ENTRENAMIENTO
-                </option>
-              </select>
-            </div>
-            <!--Tipo-->
-            <div class="form-group">
-              <label for="tipo">&bull; Seleciona el tipo de plan:</label>
-              <select
-                class="form-control"
-                name="tipo"
-                id="tipoPlan"
-                formControlName="tipo"
-              >
-                <option selected="">Seleccionar Plan</option>
-                <option value="SENCILLO">SENCILLO</option>
-                <option value="TRIMESTRAL">TRIMESTRAL</option>
-                <option value="ONLINE">ONLINE</option>
-                <option value="DOMICILIO">DOMICILIO</option>
-              </select>
-            </div>
-            <!--Nombre-->
-            <div class="form-group">
-              <label for="tipo">&bull; Escribe el título del plan</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                class="form-control"
-                placeholder="Nombre"
-                formControlName="nombre"
-              />
-            </div>
-            <!--Subtitulo-->
-            <div class="form-group">
-              <label for="tipo">&bull; Escribe el subtítulo del plan</label>
-              <input
-                type="text"
-                id="subtitulo"
-                name="subtitulo"
-                class="form-control"
-                placeholder="Subtítulo"
-                formControlName="subtitulo"
-              />
-            </div>
-            <!--Precio-->
-            <div class="form-group">
-              <label class="control-label">&bull; Introduce el precio</label>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <input
-                    type="number"
-                    name="precio"
-                    class="form-control"
-                    aria-label="Precio"
-                    placeholder="Precio"
-                    formControlName="precio"
-                  />
-                  <div class="input-group-append">
-                    <span class="input-group-text">.00 &nbsp;&euro;</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+  </div>
 
-            <!--Descripcion-->
-            <div class="form-group">
-              <label for="exampleTextarea">&bull; Añade una descripción</label>
-              <textarea
-                class="form-control"
-                id="descripcion"
-                rows="1"
-                placeholder="Opcional"
-                formControlName="descripcion"
-              ></textarea>
-            </div>
-
-            <!-- form-group// -->
-
-            <!-- Boton submit-->
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">
-                Añadir Plan
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+  <!-- Anadir posts blog-->
+  <div
+    class="card border-primary mb-4"
+    id="anadirPost"
+    style="min-width: min-content"
+  >
+    <h4 class="card-header">Lista de Posts en el Blog</h4>
+    <div>
+      <app-list-posts></app-list-posts>
     </div>
   </div>
 </div>

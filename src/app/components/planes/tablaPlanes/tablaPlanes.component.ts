@@ -7,7 +7,6 @@ import { PlanI } from '../../../shared/models/planes.interface';
 import { PlanService } from '../plan.service';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalPlanesComponent } from '../../../shared/modalPlanes/modalPlanes.component';
 @Component({
   selector: 'app-tablaPlanes',
@@ -30,11 +29,7 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(
-    private planSvc: PlanService,
-    public dialog: MatDialog,
-    public modal: NgbModal
-  ) {}
+  constructor(private planSvc: PlanService, public dialog: MatDialog) {}
   ngOnInit() {
     this.planSvc
       .getAllPlanes()
@@ -90,18 +85,16 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
   }
 
   openDialog(plan?: PlanI): void {
-    //editar
     const config = {
       data: {
-        message: plan ? 'Editar plan' : 'Crear Plan',
+        message: plan ? 'Editar Plan ' : 'Crear Plan',
         content: plan,
       },
     };
-    // crear nuevo
-    const dialogRef = this.dialog.open(ModalPlanesComponent, config);
 
+    const dialogRef = this.dialog.open(ModalPlanesComponent, config);
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      console.log(`Dialog Result Planes ${result}`);
     });
   }
   onCloseAll() {}
