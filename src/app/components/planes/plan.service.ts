@@ -11,7 +11,6 @@ import { UserI } from '../../shared/models/user.interface';
 import { switchMap } from 'rxjs/operators';
 import { RoleValidator } from '../../auth/helpers/roleValidator';
 import { PlanI } from '../../shared/models/planes.interface';
-import { Plan } from '../../shared/models/plan.model';
 import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class PlanService extends RoleValidator {

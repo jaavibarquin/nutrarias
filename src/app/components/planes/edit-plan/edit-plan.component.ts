@@ -14,6 +14,7 @@ export class EditPlanComponent implements OnInit {
 
   public editPlanForm = new FormGroup({
     uid: new FormControl('', Validators.required),
+    priceId: new FormControl('', Validators.required),
     area: new FormControl('', Validators.required),
     tipo: new FormControl('', Validators.required),
     nombre: new FormControl('', Validators.required),
@@ -32,6 +33,7 @@ export class EditPlanComponent implements OnInit {
   private initValuesForm(): void {
     this.editPlanForm.patchValue({
       uid: this.plan.uid,
+      priceId: this.plan.priceId,
       area: this.plan.area,
       tipo: this.plan.tipo,
       nombre: this.plan.nombre,

@@ -12,6 +12,7 @@ export class NewPlanComponent implements OnInit {
   constructor(private planSvc: PlanService) {}
   public newPlanForm = new FormGroup({
     uid: new FormControl('', Validators.required),
+    priceId: new FormControl('', Validators.required),
     area: new FormControl('', Validators.required),
     tipo: new FormControl('', Validators.required),
     nombre: new FormControl('', Validators.required),

@@ -12,6 +12,16 @@
         />
       </mat-form-field>
       <br />
+      <!--PlanPriceID-->
+      <mat-form-field appearance="outline" class="mr-2">
+        <mat-label> Copia el priceId de Stripe</mat-label>
+        <input
+          matInput
+          placeholder="ej: price_1HW8kGKz8hb8VNavFycLKd7k "
+          type="text"
+          formControlName="priceId"
+        />
+      </mat-form-field>
       <!--Area-->
       <mat-form-field appearance="outline" class="mr-2">
         <mat-label>Selecciona el area del servicio:</mat-label>
@@ -21,15 +31,11 @@
           formControlName="area"
         >
           <mat-option selected="">Seleccionar Área</mat-option>
-          <mat-option value="SERVICIO DE NUTRICIÓN"
-            >SERVICIO DE NUTRICIÓN</mat-option
-          >
-          <mat-option value="SERVICIO DE ENTRENAMIENTO">
+          <mat-option value="nutricion">SERVICIO DE NUTRICIÓN</mat-option>
+          <mat-option value="entrenamiento">
             SERVICIO DE ENTRENAMIENTO
           </mat-option>
-          <mat-option value="SERVICIO DE PSICOLOGÍA"
-            >SERVICIO DE PSICOLOGÍA</mat-option
-          >
+          <mat-option value="psicologia">SERVICIO DE PSICOLOGÍA</mat-option>
         </mat-select>
       </mat-form-field>
       <!--Tipo-->
