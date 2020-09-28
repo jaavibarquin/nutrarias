@@ -11,7 +11,7 @@
   <!-- Jumbotron ends-->
   <div class="row" *ngIf="posts$ | async as posts; else loading">
     <div class="col" *ngFor="let post of posts">
-      <div class="card mb-3" style="max-width: fit-content">
+      <div class="card mb-3" style="max-width: 45vh">
         <h3 class="card-header">
           <a [routerLink]="['/blog/post', post.id]">{{ post.headerPost }}</a>
         </h3>
@@ -25,11 +25,6 @@
             src="{{ post.imagePost }}"
             alt="Post image"
           />
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            {{ post.contentPost }}
-          </p>
         </div>
 
         <div class="card-footer text-muted">
