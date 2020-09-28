@@ -13,16 +13,6 @@ import { loadStripe } from '@stripe/stripe-js';
   styleUrls: ['./planes.component.css'],
 })
 export class PlanesComponent implements OnInit {
-  title = 'angular-stripe';
-  priceId = 'price_1HW9AlKz8hb8VNavLUrly8KY';
-  product = {
-    title: 'Classic Peace Lily',
-    subTitle: 'Popular House Plant',
-    description:
-      'Classic Peace Lily is a spathiphyllum floor plant arranged in a bamboo planter with a blue & red ribbom and butterfly pick.',
-    price: 18.0,
-  };
-  quantity = 1;
   stripePromise = loadStripe(environment.stripe_key);
   public planes$: Observable<PlanI[]>;
   constructor(
