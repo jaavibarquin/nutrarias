@@ -19,9 +19,9 @@
           <h5 class="card-title">{{ post.titlePost }}</h5>
           <h6 class="card-subtitle text-muted">{{ post.subtitlePost }}</h6>
         </div>
-        <div *ngIf="post.imagePost">
+        <div class="text-center" *ngIf="post.imagePost">
           <img
-            style="width: 100%"
+            style="display: inline; max-width: 90vw; max-height: 300px"
             src="{{ post.imagePost }}"
             alt="Post image"
           />

@@ -33,6 +33,7 @@ import { MaterialModule } from './material.module';
 import { ModalComponent } from './shared/modal/modal.component';
 import { ModalPlanesComponent } from './shared/modalPlanes/modalPlanes.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -70,6 +72,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CanSuscribeGuard,
     { provide: BUCKET, useValue: 'gs://nutrariashealth.appspot.com' },
   ],
+  exports: [RouterModule],
 
   bootstrap: [AppComponent],
 })

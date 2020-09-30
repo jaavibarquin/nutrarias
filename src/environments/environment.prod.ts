@@ -11,5 +11,5 @@ export const environment = {
     measurementId: 'G-RBYKEBYK7D',
   },
   stripe_key:
-    'pk_test_51HW7QMKz8hb8VNavHEzl1FLscRZXGRCAeK48MS2kaM0W8aavGPjuJPNq3pktxfbT1QYBoI6Swk6kF8DHcUbObWym00sH6HSmy0',
+    'pk_live_51HW7QMKz8hb8VNav5yQNhNlvMHupYopjSgoPpGz0PCYp0cheGdJnKAdPlXgNvx8V5Yo2UrUTzWEpFsVjiXiadmxZ001H04xHZy',
 };

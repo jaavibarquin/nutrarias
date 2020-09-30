@@ -5,15 +5,15 @@
 >
   <a [routerLink]="['/blog']"> &larr;&nbsp;Volver atrás </a>
 
-  <div class="card mb-3 mt-3" style="min-width: fit-content">
+  <div class="card mb-3 mt-3">
     <h1 class="display-3 card-header">{{ post.headerPost }}</h1>
     <div class="card-body">
       <h2 class="card-title">{{ post.titlePost }}</h2>
       <h4 class="card-subtitle text-muted">{{ post.subtitlePost }}</h4>
     </div>
-    <div *ngIf="post.imagePost">
+    <div class="text-center" style="max-width: inherit" *ngIf="post.imagePost">
       <img
-        style="width: 100%; display: block"
+        style="display: inline; max-width: 90vw; max-height: 600px"
         src="{{ post.imagePost }}"
         alt="Post image"
       />

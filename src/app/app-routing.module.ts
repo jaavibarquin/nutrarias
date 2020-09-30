@@ -96,6 +96,13 @@ const routes: Routes = [
     path: 'checkout',
     component: CheckoutComponent,
   },
+  {
+    path: 'planes/compra-confirmada',
+    loadChildren: () =>
+      import('./components/compraConfirmada/compra-confirmada.module').then(
+        (m) => m.CompraConfirmadaModule
+      ),
+  },
 ];
 
 @NgModule({

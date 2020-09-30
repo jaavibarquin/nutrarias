@@ -1,32 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { PlanService } from 'src/app/components/planes/plan.service';
 import { PlanI } from 'src/app/shared/models/planes.interface';
-import { Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { PageScrollService } from 'ngx-page-scroll-core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { loadStripe } from '@stripe/stripe-js';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-planes',
   templateUrl: './planes.component.html',
   styleUrls: ['./planes.component.css'],
 })
-export class PlanesComponent implements OnInit {
+export class PlanesComponent implements OnInit, AfterViewInit {
   stripePromise = loadStripe(environment.stripe_key);
   public planes$: Observable<PlanI[]>;
-  constructor(
-    private planSvc: PlanService,
-    private pageScrollSvc: PageScrollService,
-    @Inject(DOCUMENT) private document: any
-  ) {}
+  constructor(private planSvc: PlanService, private router: Router) {}
 
   ngOnInit() {
-    this.pageScrollSvc.scroll({
-      document: this.document,
-      scrollTarget: '.theEnd',
-    });
     this.planes$ = this.planSvc.getAllPlanes();
+  }
+  ngAfterViewInit() {
+    this.scrollToAnchor(this.router.url.toString(), 100);
   }
   async checkout(plan?: PlanI) {
     // Call your backend to create the Checkout session.
@@ -35,7 +34,7 @@ export class PlanesComponent implements OnInit {
     const { error } = await stripe.redirectToCheckout({
       mode: 'payment',
       lineItems: [{ price: plan.priceId, quantity: 1 }],
-      successUrl: `${window.location.href}/home`,
+      successUrl: `${window.location.href}/compra-confirmada`,
       cancelUrl: `${window.location.href}`,
     });
     // If `redirectToCheckout` fails due to a browser or network
@@ -43,6 +42,18 @@ export class PlanesComponent implements OnInit {
     // using `error.message`.
     if (error) {
       window.alert(error);
+    }
+  }
+  public scrollToAnchor(location: string, wait: number): void {
+    const element = document.querySelector('#' + location);
+    if (element) {
+      setTimeout(() => {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'center',
+        });
+      }, wait);
     }
   }
 }
