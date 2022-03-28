@@ -2,16 +2,14 @@ import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
-  AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Observable, of } from 'rxjs';
 import { UserI } from '../../shared/models/user.interface';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 import { RoleValidator } from '../../auth/helpers/roleValidator';
 import { PlanI } from '../../shared/models/planes.interface';
-import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class PlanService extends RoleValidator {
   public user$: Observable<UserI>;

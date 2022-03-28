@@ -11,7 +11,7 @@
   <!-- Jumbotron ends-->
   <div class="row" *ngIf="posts$ | async as posts; else loading">
     <div class="col" *ngFor="let post of posts">
-      <div class="card mb-3" style="max-width: 45vh">
+      <div class="card mb-3" style="max-width: inherit; min-width: 45vh">
         <h3 class="card-header">
           <a [routerLink]="['/blog/post', post.id]">{{ post.headerPost }}</a>
         </h3>
@@ -19,10 +19,14 @@
           <h5 class="card-title">{{ post.titlePost }}</h5>
           <h6 class="card-subtitle text-muted">{{ post.subtitlePost }}</h6>
         </div>
-        <div class="text-center" *ngIf="post.imagePost">
+        <div
+          class="text-center"
+          style="display: inline; max-width: inherit; max-height: inherit"
+          *ngIf="post.imagePost"
+        >
           <img
-            style="display: inline; max-width: 90vw; max-height: 300px"
             src="{{ post.imagePost }}"
+            style="max-width: inherit"
             alt="Post image"
           />
         </div>

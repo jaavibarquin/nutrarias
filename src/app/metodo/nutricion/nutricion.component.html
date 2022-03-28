@@ -34,10 +34,12 @@
   <p class="lead ml-4">Ofrecemos:</p>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <a href="/planes#nutricionSencillo"> Plan de Seguimiento Sencillo.</a>
+      <a [routerLink]="['/planes']" fragment="nutricionSencillo">
+        Plan de Seguimiento Sencillo.</a
+      >
     </li>
     <li class="list-group-item">
-      <a [routerLink]="['/planes#nutricionTrimestral']">
+      <a [routerLink]="['/planes']" fragment="nutricionTrimestral">
         Plan de Seguimiento Trimestral.</a
       >
     </li>
@@ -56,10 +58,7 @@
   </ul>
   <div class="card-body">
     ¿Tienes alguna duda? ¿Necesitas más información? <br />
-    <a
-      [routerLink]="['/contacto']"
-      fragment="areaEntrenamiento"
-      class="card-link"
+    <a [routerLink]="['/contacto']" fragment="areaNutricion" class="card-link"
       >Ponte en contacto con nuestro nutricionista</a
     >
   </div>

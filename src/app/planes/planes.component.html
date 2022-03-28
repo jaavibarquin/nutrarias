@@ -109,7 +109,7 @@
   </div>
 
   <!--Planes-->
-  <div *ngIf="planes$ | async as planes; else loading">
+  <div>
     <!--Nutricion-->
     <div class="card mb-3">
       <h2 class="card-header" id="nutricion">
@@ -118,7 +118,7 @@
       <!-- Sencillo-->
       <div class="card-body" id="nutricionSencillo">
         <h3 class="card-title">Plan de Seguimiento Sencillo</h3>
-        <h6 class="lead card-subtitle">
+        <h6 class="lead card-subtitle" id="nutricionSencillo1">
           Incluye:
 
           <ul>
@@ -132,28 +132,29 @@
           </ul>
         </h6>
         <br />
-
-        <div class="col" *ngFor="let plan of planes">
-          <div
-            class="card border-secondary mb-3"
-            *ngIf="plan.area == 'nutricion' && plan.tipo == 'SENCILLO'"
-          >
-            <div class="card-header text-warning">
-              <h4>{{ plan.nombre }}</h4>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ plan.subtitulo }}</h3>
-              <br />
-              <p>{{ plan.descripcion }}</p>
-              <h3 class="card-text text-right mr-3">
-                <strong> {{ plan.precio }} &euro; </strong>
-              </h3>
-              <button
-                class="btn float-right btn-success"
-                (click)="checkout(plan)"
-              >
-                Adquirir
-              </button>
+        <div *ngIf="planes$ | async as planes; else loading">
+          <div class="col" *ngFor="let plan of planes">
+            <div
+              class="card border-secondary mb-3"
+              *ngIf="plan.area == 'nutricion' && plan.tipo == 'SENCILLO'"
+            >
+              <div class="card-header text-warning">
+                <h4>{{ plan.nombre }}</h4>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{{ plan.subtitulo }}</h3>
+                <br />
+                <p>{{ plan.descripcion }}</p>
+                <h3 class="card-text text-right mr-3">
+                  <strong> {{ plan.precio }} &euro; </strong>
+                </h3>
+                <button
+                  class="btn float-right btn-success"
+                  (click)="checkout(plan)"
+                >
+                  Adquirir
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -191,28 +192,29 @@
           </ul>
         </h6>
         <br />
-
-        <div class="col" *ngFor="let plan of planes">
-          <div
-            class="card border-secondary mb-3"
-            *ngIf="plan.area == 'nutricion' && plan.tipo == 'TRIMESTRAL'"
-          >
-            <div class="card-header text-warning">
-              <h4>{{ plan.nombre }}</h4>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ plan.subtitulo }}</h3>
-              <br />
-              <p>{{ plan.descripcion }}</p>
-              <h3 class="card-text text-right mr-3">
-                <strong> {{ plan.precio }} &euro; </strong>
-              </h3>
-              <button
-                class="btn float-right btn-success"
-                (click)="checkout(plan)"
-              >
-                Adquirir
-              </button>
+        <div *ngIf="planes$ | async as planes; else loading">
+          <div class="col" *ngFor="let plan of planes">
+            <div
+              class="card border-secondary mb-3"
+              *ngIf="plan.area == 'nutricion' && plan.tipo == 'TRIMESTRAL'"
+            >
+              <div class="card-header text-warning">
+                <h4>{{ plan.nombre }}</h4>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{{ plan.subtitulo }}</h3>
+                <br />
+                <p>{{ plan.descripcion }}</p>
+                <h3 class="card-text text-right mr-3">
+                  <strong> {{ plan.precio }} &euro; </strong>
+                </h3>
+                <button
+                  class="btn float-right btn-success"
+                  (click)="checkout(plan)"
+                >
+                  Adquirir
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -242,27 +244,29 @@
           </ul>
         </h6>
         <br />
-        <div class="col" *ngFor="let plan of planes">
-          <div
-            class="card border-secondary mb-3"
-            *ngIf="plan.area == 'nutricion' && plan.tipo == 'DOMICILIO'"
-          >
-            <div class="card-header text-warning">
-              <h4>{{ plan.nombre }}</h4>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ plan.subtitulo }}</h3>
-              <br />
-              <p>{{ plan.descripcion }}</p>
-              <h3 class="card-text text-right mr-3">
-                <strong> {{ plan.precio }} &euro; </strong>
-              </h3>
-              <button
-                class="btn float-right btn-success"
-                (click)="checkout(plan)"
-              >
-                Adquirir
-              </button>
+        <div *ngIf="planes$ | async as planes; else loading">
+          <div class="col" *ngFor="let plan of planes">
+            <div
+              class="card border-secondary mb-3"
+              *ngIf="plan.area == 'nutricion' && plan.tipo == 'DOMICILIO'"
+            >
+              <div class="card-header text-warning">
+                <h4>{{ plan.nombre }}</h4>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{{ plan.subtitulo }}</h3>
+                <br />
+                <p>{{ plan.descripcion }}</p>
+                <h3 class="card-text text-right mr-3">
+                  <strong> {{ plan.precio }} &euro; </strong>
+                </h3>
+                <button
+                  class="btn float-right btn-success"
+                  (click)="checkout(plan)"
+                >
+                  Adquirir
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -342,28 +346,30 @@
           </ul>
         </h6>
         <br />
-        <div class="col" *ngFor="let plan of planes">
-          <div
-            class="card border-secondary mb-3"
-            *ngIf="plan.area == 'entrenamiento' && plan.tipo == 'SENCILLO'"
-          >
-            <div class="card-header text-warning">
-              <h4>{{ plan.nombre }}</h4>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ plan.subtitulo }}</h3>
-              <br />
-              <p>{{ plan.descripcion }}</p>
+        <div *ngIf="planes$ | async as planes; else loading">
+          <div class="col" *ngFor="let plan of planes">
+            <div
+              class="card border-secondary mb-3"
+              *ngIf="plan.area == 'entrenamiento' && plan.tipo == 'SENCILLO'"
+            >
+              <div class="card-header text-warning">
+                <h4>{{ plan.nombre }}</h4>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{{ plan.subtitulo }}</h3>
+                <br />
+                <p>{{ plan.descripcion }}</p>
 
-              <h3 class="card-text text-right mr-3">
-                <strong> {{ plan.precio }} &euro; </strong>
-              </h3>
-              <button
-                class="btn float-right btn-success"
-                (click)="checkout(plan)"
-              >
-                Adquirir
-              </button>
+                <h3 class="card-text text-right mr-3">
+                  <strong> {{ plan.precio }} &euro; </strong>
+                </h3>
+                <button
+                  class="btn float-right btn-success"
+                  (click)="checkout(plan)"
+                >
+                  Adquirir
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -404,27 +410,29 @@
           </ul>
         </h6>
         <br />
-        <div class="col" *ngFor="let plan of planes">
-          <div
-            class="card border-secondary mb-3"
-            *ngIf="plan.area == 'entrenamiento' && plan.tipo == 'ONLINE'"
-          >
-            <div class="card-header text-warning">
-              <h4>{{ plan.nombre }}</h4>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ plan.subtitulo }}</h3>
-              <br />
-              <p>{{ plan.descripcion }}</p>
-              <h3 class="card-text text-right mr-3">
-                <strong> {{ plan.precio }} &euro; </strong>
-              </h3>
-              <button
-                class="btn float-right btn-success"
-                (click)="checkout(plan)"
-              >
-                Adquirir
-              </button>
+        <div *ngIf="planes$ | async as planes; else loading">
+          <div class="col" *ngFor="let plan of planes">
+            <div
+              class="card border-secondary mb-3"
+              *ngIf="plan.area == 'entrenamiento' && plan.tipo == 'ONLINE'"
+            >
+              <div class="card-header text-warning">
+                <h4>{{ plan.nombre }}</h4>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{{ plan.subtitulo }}</h3>
+                <br />
+                <p>{{ plan.descripcion }}</p>
+                <h3 class="card-text text-right mr-3">
+                  <strong> {{ plan.precio }} &euro; </strong>
+                </h3>
+                <button
+                  class="btn float-right btn-success"
+                  (click)="checkout(plan)"
+                >
+                  Adquirir
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -473,27 +481,28 @@
           </ul>
         </h6>
         <br />
-        <!--ngFor-->
-        <div class="col" *ngFor="let plan of planes">
-          <div
-            class="card border-secondary mb-3"
-            *ngIf="plan.area == 'entrenamiento' && plan.tipo == 'DOMICILIO'"
-          >
-            <div class="card-header text-warning">
-              <h4>{{ plan.nombre }}</h4>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ plan.subtitulo }}</h3>
-              <br />
-              <p>{{ plan.descripcion }}</p>
-              <h3 class="card-text text-right mr-3">
-                <strong> Desde {{ plan.precio }} &euro; </strong>
-              </h3>
-              <a
-                class="btn float-right btn-success"
-                href="mailto:rs4training1@gmail.com?subject=Solicitar Entrenamiento Presencial"
-                >Solicitar</a
-              >
+        <div *ngIf="planes$ | async as planes; else loading">
+          <div class="col" *ngFor="let plan of planes">
+            <div
+              class="card border-secondary mb-3"
+              *ngIf="plan.area == 'entrenamiento' && plan.tipo == 'DOMICILIO'"
+            >
+              <div class="card-header text-warning">
+                <h4>{{ plan.nombre }}</h4>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{{ plan.subtitulo }}</h3>
+                <br />
+                <p>{{ plan.descripcion }}</p>
+                <h3 class="card-text text-right mr-3">
+                  <strong> Desde {{ plan.precio }} &euro; </strong>
+                </h3>
+                <a
+                  class="btn float-right btn-success"
+                  href="mailto:rs4training1@gmail.com?subject=Solicitar Entrenamiento Presencial"
+                  >Solicitar</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -529,55 +538,55 @@
           </ul>
         </h6>
         <br />
-        <div class="col" *ngFor="let plan of planes">
-          <div
-            class="card border-secondary mb-3"
-            *ngIf="
-              plan.area == 'psicologia' &&
-              plan.tipo == 'SENCILLO' &&
-              plan.subtitulo == 'Primera Consulta'
-            "
-          >
-            <div class="card-header text-warning">
-              <h4>{{ plan.nombre }}</h4>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ plan.subtitulo }}</h3>
-              <br />
-              <p>{{ plan.descripcion }}</p>
-              <div *ngIf="plan.precio > 0; else gratuita">
-                <h3 class="card-text text-right mr-3">
-                  <strong> {{ plan.precio }} &euro; </strong>
-                </h3>
-                <button
-                  class="btn float-right btn-success"
-                  (click)="checkout(plan)"
-                >
-                  Adquirir
-                </button>
+        <div *ngIf="planes$ | async as planes; else loading">
+          <div class="col" *ngFor="let plan of planes">
+            <div
+              class="card border-secondary mb-3"
+              *ngIf="
+                plan.area == 'psicologia' &&
+                plan.tipo == 'SENCILLO' &&
+                plan.subtitulo == 'Primera Consulta'
+              "
+            >
+              <div class="card-header text-warning">
+                <h4>{{ plan.nombre }}</h4>
               </div>
-              <ng-template #gratuita>
-                <h3 class="card-text text-right mr-3">
-                  <strong> Gratuita </strong>
-                </h3>
-                <a
-                  class="btn float-right btn-success"
-                  href="mailto:martaperezbadala@gmail.com?subject=Primera Consulta Psicología"
-                  >Solicitar</a
-                >
-              </ng-template>
+              <div class="card-body">
+                <h3 class="card-title">{{ plan.subtitulo }}</h3>
+                <br />
+                <p>{{ plan.descripcion }}</p>
+                <div *ngIf="plan.precio > 0; else gratuita">
+                  <h3 class="card-text text-right mr-3">
+                    <strong> {{ plan.precio }} &euro; </strong>
+                  </h3>
+                  <button
+                    class="btn float-right btn-success"
+                    (click)="checkout(plan)"
+                  >
+                    Adquirir
+                  </button>
+                </div>
+                <ng-template #gratuita>
+                  <h3 class="card-text text-right mr-3">
+                    <strong> Gratuita </strong>
+                  </h3>
+                  <a
+                    class="btn float-right btn-success"
+                    href="mailto:martaperezbadala@gmail.com?subject=Primera Consulta Psicología"
+                    >Solicitar</a
+                  >
+                </ng-template>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <hr />
       <!--Consultas Seguimiento-->
-      <div
-        class="card-body"
-        id="psicologiaSeguimiento"
-        name="psicologiaSeguimiento"
-      >
-        <h3 class="card-title">Consultas de Seguimiento</h3>
+      <div class="card-body" name="psicologiaSeguimiento">
+        <h3 class="card-title" id="psicologiaSeguimiento">
+          Consultas de Seguimiento
+        </h3>
         <h6 class="lead card-subtitle">
           <br />
           Incluyen:
@@ -596,43 +605,45 @@
           </ul>
         </h6>
         <br />
-        <div class="col" *ngFor="let plan of planes">
-          <div
-            class="card border-secondary mb-3"
-            *ngIf="
-              plan.area == 'psicologia' &&
-              plan.tipo == 'SENCILLO' &&
-              plan.subtitulo != 'Primera Consulta'
-            "
-          >
-            <div class="card-header text-warning">
-              <h4>{{ plan.nombre }}</h4>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ plan.subtitulo }}</h3>
-              <br />
-              <p>{{ plan.descripcion }}</p>
-              <div *ngIf="plan.precio > 0; else gratuita">
-                <h3 class="card-text text-right mr-3">
-                  <strong> {{ plan.precio }} &euro; </strong>
-                </h3>
-                <button
-                  class="btn float-right btn-success"
-                  (click)="checkout(plan)"
-                >
-                  Adquirir
-                </button>
+        <div *ngIf="planes$ | async as planes; else loading">
+          <div class="col" *ngFor="let plan of planes">
+            <div
+              class="card border-secondary mb-3"
+              *ngIf="
+                plan.area == 'psicologia' &&
+                plan.tipo == 'SENCILLO' &&
+                plan.subtitulo != 'Primera Consulta'
+              "
+            >
+              <div class="card-header text-warning">
+                <h4>{{ plan.nombre }}</h4>
               </div>
-              <ng-template #gratuita>
-                <h3 class="card-text text-right mr-3">
-                  <strong> Gratuita </strong>
-                </h3>
-                <a
-                  class="btn float-right btn-success"
-                  href="mailto:martaperezbadala@gmail.com?subject=Primera Consulta Psicología"
-                  >Solicitar</a
-                >
-              </ng-template>
+              <div class="card-body">
+                <h3 class="card-title">{{ plan.subtitulo }}</h3>
+                <br />
+                <p>{{ plan.descripcion }}</p>
+                <div *ngIf="plan.precio > 0; else gratuita">
+                  <h3 class="card-text text-right mr-3">
+                    <strong> {{ plan.precio }} &euro; </strong>
+                  </h3>
+                  <button
+                    class="btn float-right btn-success"
+                    (click)="checkout(plan)"
+                  >
+                    Adquirir
+                  </button>
+                </div>
+                <ng-template #gratuita>
+                  <h3 class="card-text text-right mr-3">
+                    <strong> Gratuita </strong>
+                  </h3>
+                  <a
+                    class="btn float-right btn-success"
+                    href="mailto:martaperezbadala@gmail.com?subject=Primera Consulta Psicología"
+                    >Solicitar</a
+                  >
+                </ng-template>
+              </div>
             </div>
           </div>
         </div>

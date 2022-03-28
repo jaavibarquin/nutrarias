@@ -16,16 +16,13 @@ import { Router } from '@angular/router';
   templateUrl: './planes.component.html',
   styleUrls: ['./planes.component.css'],
 })
-export class PlanesComponent implements OnInit, AfterViewInit {
+export class PlanesComponent implements OnInit {
   stripePromise = loadStripe(environment.stripe_key);
   public planes$: Observable<PlanI[]>;
   constructor(private planSvc: PlanService, private router: Router) {}
 
   ngOnInit() {
     this.planes$ = this.planSvc.getAllPlanes();
-  }
-  ngAfterViewInit() {
-    this.scrollToAnchor(this.router.url.toString(), 100);
   }
   async checkout(plan?: PlanI) {
     // Call your backend to create the Checkout session.
@@ -42,18 +39,6 @@ export class PlanesComponent implements OnInit, AfterViewInit {
     // using `error.message`.
     if (error) {
       window.alert(error);
-    }
-  }
-  public scrollToAnchor(location: string, wait: number): void {
-    const element = document.querySelector('#' + location);
-    if (element) {
-      setTimeout(() => {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'center',
-        });
-      }, wait);
     }
   }
 }
