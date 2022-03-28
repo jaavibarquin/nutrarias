@@ -1,18 +1,19 @@
-# Nutrarias
+# Nutrarias Health Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+Proyecto creado para la construcción del sitio web https://nutrarias.es .
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Introduce el comendo `ng serve` para probarlo en un servidor local. Navega a  `http://localhost:4200/`. La aplicacion se actualizará automáticamente cada vez que realices un cambio.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Introduce el comendo `ng generate component component-name` para generar un nuevo componente. Tambien puedes usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Introduce el comando `ng build` para construir el proyecto. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
