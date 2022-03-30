@@ -1,0 +1,77 @@
+<div class="col-md-11 mx-auto mt-4">
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1 class="display-3">Cita Online</h1>
+    <hr class="my-4" />
+    <p class="lead">
+      Reserva tu cita online de manera sencilla. Selecciona el área deseado y la
+      fecha que mejor te venga para concertar cita con nosotros.
+    </p>
+  </div>
+
+  <!--Calendario -->
+  <div class="row">
+    <div class="col" style="min-width: max-content">
+      <div class="card mb-4">
+        <h4 class="card-header">Elige área</h4>
+        <div class="card-body">
+          <fieldset class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="optionNutricion"
+                  id="opNutricion"
+                  value="nutricion"
+                  checked=""
+                />
+                Area Nutrición
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="optionEntrenamiento"
+                  id="opEntrenamiento"
+                  value="entrenamiento"
+                />
+                Area Entrenamiento
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="optionsRadios"
+                  id="optionsRadios3"
+                  value="option3"
+                />
+                Option three is disabled
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="min-width: fit-content">
+      <div class="card mb-4">
+        <h4 class="card-header">Elige hora</h4>
+        <div class="card-body">
+          <mat-card class="calendar-card">
+            <mat-calendar
+              #calendar
+              [minDate]="minDate"
+              [maxDate]="maxDate"
+              (selectedChange)="selected = $event"
+            ></mat-calendar>
+          </mat-card>
+          <p>Selected date: {{ selected }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

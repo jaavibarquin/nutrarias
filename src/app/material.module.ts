@@ -16,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 const myModule = [
   MatCardModule,
@@ -34,6 +35,7 @@ const myModule = [
   MatInputModule,
   MatDialogModule,
   MatDatepickerModule,
+  MatNativeDateModule,
   MatBottomSheetModule,
 ];
 

@@ -103,6 +103,11 @@ const routes: Routes = [
         (m) => m.CompraConfirmadaModule
       ),
   },
+  {
+    path: 'cita-online',
+    loadChildren: () =>
+      import('./citas-online/citas-online.module').then((m) => m.CitasOnlineModule),
+  },
 ];
 
 @NgModule({
