@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 /*  Firebase */
 import { AngularFireModule } from '@angular/fire';
@@ -18,7 +19,7 @@ import { PostComponent } from './components/posts/post/post.component';
 import { BlogModule } from './blog/blog.module';
 
 import { environment } from 'src/environments/environment';
-import { AuthService } from './auth/services/auth.service';
+import { AuthService } from './services/auth.service';
 import { CanEditGuard } from './auth/guards/can-edit.guard';
 import { CanAdminGuard } from './auth/guards/can-admin.guard';
 import { CanSuscribeGuard } from './auth/guards/can-suscribe.guard';
@@ -64,6 +65,7 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
     BlogModule,
     NgbModule,
+    HttpClientModule
   ],
   providers: [
     AuthService,

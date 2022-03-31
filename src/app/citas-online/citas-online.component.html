@@ -69,7 +69,11 @@
               (selectedChange)="selected = $event"
             ></mat-calendar>
           </mat-card>
-          <p>Selected date: {{ selected }}</p>
+          <p>Selected date: {{ selected.toISOString().slice(0, 10) }}</p>
+          <p>
+            PreviaSelected date:
+            {{ previousSelected.toISOString().slice(0, 10) }}
+          </p>
         </div>
       </div>
     </div>

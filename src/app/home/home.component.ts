@@ -1,5 +1,5 @@
 import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 
