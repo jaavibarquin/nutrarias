@@ -15,67 +15,53 @@
       <div class="card mb-4">
         <h4 class="card-header">Elige área</h4>
         <div class="card-body">
-          <fieldset class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input
-                  type="radio"
-                  class="form-check-input"
-                  name="optionNutricion"
-                  id="opNutricion"
-                  value="nutricion"
-                  checked=""
-                />
-                Area Nutrición
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input
-                  type="radio"
-                  class="form-check-input"
-                  name="optionEntrenamiento"
-                  id="opEntrenamiento"
-                  value="entrenamiento"
-                />
-                Area Entrenamiento
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input
-                  type="radio"
-                  class="form-check-input"
-                  name="optionsRadios"
-                  id="optionsRadios3"
-                  value="option3"
-                />
-                Option three is disabled
-              </label>
-            </div>
-          </fieldset>
+          <mat-form-field appearance="fill">
+            <mat-label> Selecciona un Área</mat-label>
+            <mat-select [(value)]="areaString">
+              <mat-option value="NUTR">Área Nutrición</mat-option>
+              <mat-option value="ENTR">Área Entrenamiento</mat-option>
+              <mat-option value="PSIC">Área Psicología</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p>Area seleccionada: {{ areaString }}</p>
         </div>
       </div>
     </div>
     <div class="col" style="min-width: fit-content">
       <div class="card mb-4">
-        <h4 class="card-header">Elige hora</h4>
+        <h4 class="card-header">Elige día</h4>
         <div class="card-body">
           <mat-card class="calendar-card">
             <mat-calendar
               #calendar
               [minDate]="minDate"
               [maxDate]="maxDate"
-              (selectedChange)="selected = $event"
+              (selectedChange)="dateSelected = $event"
             ></mat-calendar>
           </mat-card>
-          <p>Selected date: {{ selected.toISOString().slice(0, 10) }}</p>
-          <p>
-            PreviaSelected date:
-            {{ previousSelected.toISOString().slice(0, 10) }}
-          </p>
+
+          <p>Selected date: {{ fechaSeleccionada }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="min-width: max-content">
+      <div class="card mb-4">
+        <h4 class="card-header">Elige la hora</h4>
+        <div class="card-body">
+          <div class="col" *ngFor="let cita of listaCitas">
+            <div class="button">
+              <button class="btn btn-primary" style="margin-top: 5px">
+                {{ cita.hora }}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <ng-template #loading>
+    <p class="lead text-center" style="padding: 10px">
+      Selecciona una fecha o vuelve a intentarlo más tarde.
+    </p>
+  </ng-template>
 </div>

@@ -1,10 +1,12 @@
+import { Cliente } from "./cliente.interface";
+export type AreaCita = 'NUTR' | 'PSIC' | 'ENTR';
 
-export interface CitasI{
-  uid: string;
-  fecha: Date;
+export interface CitaI{
+  idcita: string;
+  fullfecha: string;
+  fecha: string;
   hora: string;
-  nombre: string;
-  apellidos: string;
-  email: string;
-  telefono?: string;
+  area?: AreaCita;
+  cliente?: Cliente;
+  disponible?: boolean;
 }

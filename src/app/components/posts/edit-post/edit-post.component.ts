@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostI } from '../../../shared/models/post.interface';
-import { PostService } from '../post.service';
+import { PostService } from '../../../services/post.service';
 @Component({
   selector: 'app-edit-post',
   templateUrl: './edit-post.component.html',

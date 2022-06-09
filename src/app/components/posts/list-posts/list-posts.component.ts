@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
-import { PostService } from '../post.service';
+import { PostService } from '../../../services/post.service';
 import { PostI } from 'src/app/shared/models/post.interface';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';

@@ -9,7 +9,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 import { PostI } from 'src/app/shared/models/post.interface';
-import { FileI } from '../../shared/models/file.interface';
+import { FileI } from '../shared/models/file.interface';
 @Injectable({
   providedIn: 'root',
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PostI } from '../../../shared/models/post.interface';
-import { PostService } from '../post.service';
+import { PostService } from '../../../services/post.service';
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
