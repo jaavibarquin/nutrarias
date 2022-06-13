@@ -11,78 +11,158 @@
 
   <mat-vertical-stepper linear>
     <mat-step>
-      <form [formGroup]="clienteForm">
-        <ng-template matStepLabel>Selecciona un área</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label> Selecciona un Área</mat-label>
-          <mat-select [(value)]="areaString">
-            <mat-option value="NUTR">Área Nutrición</mat-option>
-            <mat-option value="ENTR">Área Entrenamiento</mat-option>
-            <mat-option value="PSIC">Área Psicología</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div>
-          <button class="btn btn-primary" mat-button matStepperNext>
-            Siguiente
-          </button>
-        </div>
-      </form>
+      <ng-template matStepLabel>Selecciona un área</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label> Selecciona un Área</mat-label>
+        <mat-select [(value)]="area">
+          <mat-option value="NUTR">Área Nutrición</mat-option>
+          <mat-option value="ENTR">Área Entrenamiento</mat-option>
+          <mat-option value="PSIC">Área Psicología</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>
+          Siguiente
+        </button>
+      </div>
     </mat-step>
-    <mat-step [stepControl]="clienteForm" label="Selecciona una fecha">
-      <form [formGroup]="clienteForm">
-        <div class="row">
-          <div class="col">
-            <mat-card class="calendar-card;" style="max-width: 100%">
-              <mat-calendar
-                #calendar
-                [minDate]="minDate"
-                [maxDate]="maxDate"
-                (selectedChange)="dateSelected = $event"
-              ></mat-calendar>
-            </mat-card>
-          </div>
-          <div class="col">
-            <div class="card mb-4">
-              <h4 class="card-header">
-                Citas para el día {{ fechaNormalizada }}
-              </h4>
-              <div class="card-body">
-                <div class="d-grid gap-2 d-md-block">
-                  <button
-                    *ngFor="let cita of listaCitas"
-                    class="btn btn-primary mb-2 ml-2"
-                    type="button"
-                    (click)="seleccionaHora(cita)"
-                  >
-                    {{ cita.hora }}
-                  </button>
-                </div>
+    <mat-step label="Selecciona una fecha">
+      <div class="row mt-3 mb-3">
+        <div class="col mt-1 mb-2">
+          <mat-card
+            class="calendar-card;"
+            style="min-width: 30vh; max-width: 60vh"
+          >
+            <mat-calendar
+              [(selected)]="dateSelected"
+              [minDate]="minDate"
+              [maxDate]="maxDate"
+            ></mat-calendar>
+          </mat-card>
+        </div>
+        <div class="col">
+          <div class="card mt-1 mb-2" style="min-width: 30vh; max-width: 60vh">
+            <h4 class="card-header text-center">
+              Citas para el día <br />
+              {{ fechaNormalizada }}
+            </h4>
+            <div
+              class="card-body text-center"
+              *ngIf="existenCitas(); else loading"
+            >
+              <div class="d-grid gap-2 d-md-block">
+                <button
+                  *ngFor="let cita of listaCitas"
+                  class="btn btn-primary mb-3 ml-3"
+                  type="submit"
+                  (click)="seleccionaHora(cita)"
+                  matStepperNext
+                >
+                  {{ cita.hora }}
+                </button>
               </div>
             </div>
+            <ng-template #loading>
+              <p class="lead text-center mt-3">
+                Vaya, no hay citas para este día.
+              </p>
+            </ng-template>
           </div>
         </div>
-        <div>
-          <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext>Siguiente</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Introduce tus datos</ng-template>
-      <p>Ha reservado su cita.</p>
+      </div>
       <div>
-        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-stroked-button color="warn" matStepperPrevious>
+          Atrás
+        </button>
+        <button class="ml-3" mat-raised-button color="primary" matStepperNext>
+          Siguiente
+        </button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="clienteForm">
+      <ng-template matStepLabel>Introduce tus datos</ng-template>
+      <div class="mt-3">
+        <p class="lead" *ngIf="citaSeleccionada">
+          Está reservando su cita para <b> {{ areaString }}</b> el dia
+          <b>{{ fechaNormalizada }}</b> a las <b>{{ citaSeleccionada.hora }}</b
+          >. Por favor, proporcione sus datos para realizar la reserva:
+        </p>
+      </div>
+      <div class="mt-2">
+        <form
+          [formGroup]="clienteForm"
+          (ngSubmit)="onReservaCita(clienteForm.value)"
+        >
+          <mat-form-field appearance="outline" class="mr-2">
+            <input
+              matInput
+              placeholder="Nombre"
+              type="text"
+              formControlName="nombre"
+              required
+          /></mat-form-field>
+          <mat-form-field appearance="outline" class="mr-2">
+            <input
+              matInput
+              placeholder="Apellidos"
+              type="text"
+              formControlName="apellidos"
+              required
+          /></mat-form-field>
+          <mat-form-field appearance="outline" class="mr-2">
+            <input
+              matInput
+              placeholder="Teléfono"
+              type="tel"
+              formControlName="telefono"
+              required
+          /></mat-form-field>
+          <mat-form-field appearance="outline" class="mr-2">
+            <input
+              matInput
+              placeholder="Correo electrónico"
+              type="email"
+              formControlName="email"
+              required
+          /></mat-form-field>
+          <div>
+            <button mat-stroked-button color="warn" matStepperPrevious>
+              Atrás
+            </button>
+            <button
+              class="ml-3"
+              mat-raised-button
+              color="primary"
+              matStepperNext
+              type="submit"
+            >
+              Reservar
+            </button>
+          </div>
+        </form>
       </div>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Hecho</ng-template>
-      <p>Ha reservado su cita.</p>
+      <p class="lead" *ngIf="citaSeleccionada && cliente">
+        Perfecto! Ha reservado su cita para <b> {{ areaString }}</b> el dia
+        <b>{{ fechaNormalizada }}</b> a las <b>{{ citaSeleccionada.hora }}</b
+        >.
+      </p>
       <div>
-        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-stroked-button color="warn" matStepperPrevious>
+          Atrás
+        </button>
       </div>
     </mat-step>
   </mat-vertical-stepper>
-  <p>AREA: {{ areaString }}</p>
+  <p>AREA: {{ area }}</p>
   <p>FECHA: {{ fechaSeleccionada }}</p>
-  <!-- <p>HORA: {{ citaSeleccionada.idcita }}</p> -->
+  <div *ngIf="citaSeleccionada && cliente">
+    <p>HORA: {{ citaSeleccionada.idcita }}</p>
+    <p>CLIENTE: {{ cliente.email }}</p>
+  </div>
+  <div *ngIf="areaString">
+    <p>AREA: {{ areaString }}</p>
+  </div>
 </div>

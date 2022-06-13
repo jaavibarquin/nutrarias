@@ -1,4 +1,4 @@
-import { Cliente } from "./cliente.interface";
+import { ClienteI } from "./cliente.interface";
 export type AreaCita = 'NUTR' | 'PSIC' | 'ENTR';
 
 export interface CitaI{
@@ -7,6 +7,6 @@ export interface CitaI{
   fecha: string;
   hora: string;
   area?: AreaCita;
-  cliente?: Cliente;
+  cliente?: ClienteI;
   disponible?: boolean;
 }
