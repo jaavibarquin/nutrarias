@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { AreaCita, CitaI } from '../shared/models/citas.interface';
+import { CitaI } from '../shared/models/citas.interface';
 
 @Injectable()
 export class CitasOnlineService
@@ -17,16 +16,13 @@ export class CitasOnlineService
 
 
   public getCitasLibresDia(area: string | null, dia: string | null): Observable<CitaI[]> {
-    this.path = this.basePath.concat(`/citas/${area}`);
+    this.path = this.basePath.concat(`/citas/${area}/libres`);
     console.log(this.path);
     const options = dia? { params: new HttpParams().set('fecha', dia)
   } : { };
     if (area == "ENTR" || area == "PSIC" || area == "NUTR") {
       try {
         this.obvs = this.httpclient.get<CitaI[]>(this.path, options);
-        // .pipe(
-        //   catchError(this.handleError<CitaI[]>('getCitasLibresDia', []))
-        // );
         return this.obvs;
       }
       catch (error) {
@@ -40,8 +36,7 @@ export class CitasOnlineService
   }
 
   public getCita(area: string, dia: string, hora: string): Observable<CitaI> {
-    //this.path = this.basePath.concat(`/citas/${area}/${dia}/${hora}`);
-    this.path = this.basePath.concat(`/citas/NUTR/2022-08-22/10:00:00`);
+    this.path = this.basePath.concat(`/citas/${area}/${dia}/${hora}`);
     return this.httpclient.get<CitaI>(this.path);
   }
 }

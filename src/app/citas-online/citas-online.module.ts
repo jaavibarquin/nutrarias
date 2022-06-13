@@ -6,13 +6,15 @@ import { CitasOnlineComponent } from './citas-online.component';
 import { MaterialModule } from '../material.module';
 
 import { CitasOnlineService } from '../services/citas-online.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CitasOnlineComponent],
   imports: [
     CommonModule,
     CitasOnlineRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [ CitasOnlineService ],
 })

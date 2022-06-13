@@ -18,6 +18,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatStepperModule } from '@angular/material/stepper';
+
 const myModule = [
   MatCardModule,
   MatButtonModule,
@@ -37,6 +39,7 @@ const myModule = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatBottomSheetModule,
+  MatStepperModule
 ];
 
 @NgModule({

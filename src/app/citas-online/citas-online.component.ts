@@ -4,6 +4,7 @@ import { formatDate } from '@angular/common';
 import { Observable } from 'rxjs';
 
 import { CitaI } from '../shared/models/citas.interface';
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-citas-online',
   templateUrl: './citas-online.component.html',
@@ -11,6 +12,12 @@ import { CitaI } from '../shared/models/citas.interface';
 })
   
 export class CitasOnlineComponent implements OnInit {
+  clienteForm = new FormGroup({
+    nombre: new FormControl(''),
+    apellidos: new FormControl(''),
+    telefono: new FormControl(''),
+    email: new FormControl(''),
+  });
   minDate: Date | null; 
   maxDate: Date | null; 
 
@@ -20,9 +27,8 @@ export class CitasOnlineComponent implements OnInit {
 
   areaString: string | null;
   fechaSeleccionada: string | null;
-  cita: CitaI | null;
-  fontStyle?: string;
-  public citas: CitaI[]= [];
+  fechaNormalizada: string | null;
+  citaSeleccionada: CitaI | null;
 
   
 
@@ -50,6 +56,7 @@ export class CitasOnlineComponent implements OnInit {
       this.citasOnlineSvc.getCitasLibresDia(this.areaString, this.fechaSeleccionada)
         .subscribe(
           data => { this.listaCitas = data; });
+      this.fechaNormalizada = formatDate(this.dateSelected, "dd-MM-yyyy", this.locale);
     }
   }
 
@@ -57,39 +64,10 @@ export class CitasOnlineComponent implements OnInit {
     this.citasOnlineSvc.getCita(this.areaString, this.fechaSeleccionada, "10:00:00");
   }
 
-  getCitas() {
-    return [
-      {
-        "idcita": "N2022-07-11T09:30:00",
-        "fullfecha": "2022-07-11T09:30:00",
-        "fecha": "2022-07-11",
-        "hora": "09:30",
-        "cliente": null,
-        "disponible": true
-    },
-    {
-        "idcita": "N2022-07-11T10:00:00",
-        "fullfecha": "2022-07-11T10:00:00",
-        "fecha": "2022-07-11",
-        "hora": "10:00",
-        "cliente": null,
-        "disponible": true
-    },
-    {
-    "idcita": "N2022-08-22T10:00:00",
-    "fullfecha": "2022-08-22T10:00:00",
-    "fecha": "2022-08-22",
-    "hora": "10:00",
-    "cliente": {
-        "telefono": "678000111",
-        "email": "lucialopez@gmail.com",
-        "nombre": "Lucia",
-        "apellidos": "Lopez Gómez"
-    },
-    "disponible": false
-      }
-    ]
+  seleccionaHora(cita: CitaI): void {
+    this.citaSeleccionada = cita;
   }
+
 
 
 
