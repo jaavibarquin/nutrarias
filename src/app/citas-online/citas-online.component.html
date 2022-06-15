@@ -73,8 +73,8 @@
         </div>
       </div>
       <p class="lead mt-3" *ngIf="citaSeleccionada">
-        Fecha seleccionada: el <b>{{ fechaNormalizada }}</b> a las
-        <b>{{ citaSeleccionada.hora }}</b
+        Fecha seleccionada: el <strong>{{ fechaNormalizada }}</strong> a las
+        <strong>{{ citaSeleccionada.hora }}</strong
         >.
       </p>
       <div>
@@ -95,8 +95,9 @@
       <ng-template matStepLabel>Introduce tus datos</ng-template>
       <div class="mt-3">
         <p class="lead" *ngIf="citaSeleccionada">
-          Está reservando su cita para <b> {{ areaString }}</b> el dia
-          <b>{{ fechaNormalizada }}</b> a las <b>{{ citaSeleccionada.hora }}</b
+          Está reservando su cita para <strong> {{ areaString }}</strong> el dia
+          <strong>{{ fechaNormalizada }}</strong> a las
+          <strong>{{ citaSeleccionada.hora }}</strong
           >. Por favor, proporcione sus datos para realizar la reserva:
         </p>
       </div>
@@ -164,11 +165,14 @@
       <ng-template matStepLabel>Hecho</ng-template>
       <div *ngIf="citaRealizada && cliente; else reservando">
         <p class="lead">
-          ¡Perfecto! Ha reservado su cita para <b> {{ areaString }}</b> el dia
-          <b>{{ fechaNormalizada }}</b> a las <b>{{ citaRealizada.hora }}</b
+          ¡Perfecto! Ha reservado su cita para
+          <strong> {{ areaString }}</strong> el dia
+          <strong>{{ fechaNormalizada }}</strong> a las
+          <strong>{{ citaRealizada.hora }}</strong
           >.
           <br />
-          Le hemos enviado un correo con su cita a <b>{{ cliente.email }}</b
+          Le hemos enviado un correo con su cita a
+          <strong>{{ cliente.email }}</strong
           >, si no lo encuentra, compruebe su bandeja de spam.
         </p>
         <div>
