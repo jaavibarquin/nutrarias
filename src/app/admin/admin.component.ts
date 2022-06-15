@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlanService } from 'src/app/components/planes/plan.service';
@@ -9,7 +9,7 @@ import { PlanI } from 'src/app/shared/models/planes.interface';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
   planes: PlanI[];
   nuevoPlanForm = new FormGroup({
     uid: new FormControl(''),
@@ -22,6 +22,4 @@ export class AdminComponent implements OnInit {
   });
 
   constructor(private router: Router, private planSvc: PlanService) {}
-
-  ngOnInit() {}
 }

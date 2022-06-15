@@ -9,7 +9,7 @@ import { UserI } from 'src/app/shared/models/user.interface';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   registerForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
@@ -23,7 +23,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(private authSvc: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
 
   async onRegister() {
     const {

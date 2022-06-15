@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 @Component({
@@ -6,13 +6,12 @@ import Swal from 'sweetalert2';
   templateUrl: './compra-confirmada.component.html',
   styleUrls: ['./compra-confirmada.component.css'],
 })
-export class CompraConfirmadaComponent implements OnInit, AfterViewInit {
+export class CompraConfirmadaComponent implements AfterViewInit {
   constructor(private router: Router) {}
   ngAfterViewInit(): void {
     this.compraRealizadaCorrectamente();
   }
 
-  ngOnInit() {}
   compraRealizadaCorrectamente() {
     Swal.fire({
       imageUrl:
@@ -22,7 +21,7 @@ export class CompraConfirmadaComponent implements OnInit, AfterViewInit {
       title: '¡Muchas gracias por su confianza!',
       text: 'La compra se ha realizado correctamente!',
       confirmButtonText:
-        '<a class="text-white" href="/contacto">Pide tu Cita</a>',
+        '<a class="text-white" href="/cita-online">Pide tu Cita</a>',
       timer: 4400,
     });
   }

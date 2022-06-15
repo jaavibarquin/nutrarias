@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-suscriptor',
   templateUrl: './suscriptor.component.html',
   styleUrls: ['./suscriptor.component.css'],
 })
-export class SuscriptorComponent implements OnInit {
-  constructor() {}
+export class SuscriptorComponent  {
 
-  ngOnInit(): void {}
 }

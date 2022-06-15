@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -9,13 +9,13 @@ import { UserI } from '../models/user.interface';
   templateUrl: './navibar.component.html',
   styleUrls: ['./navibar.component.css'],
 })
-export class NavibarComponent implements OnInit {
+export class NavibarComponent{
   public isLogged = false;
   public user$: Observable<UserI> = this.authSvc.afAuth.user;
 
   constructor(private authSvc: AuthService, private router: Router) {}
 
-  async ngOnInit() {}
+  
 
   async onLogout() {
     try {

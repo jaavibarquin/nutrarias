@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlanI } from '../../../shared/models/planes.interface';
 import { PlanService } from '../plan.service';
@@ -8,7 +8,7 @@ import { PlanService } from '../plan.service';
   templateUrl: './new-plan.component.html',
   styleUrls: ['./new-plan.component.css'],
 })
-export class NewPlanComponent implements OnInit {
+export class NewPlanComponent {
   constructor(private planSvc: PlanService) {}
   public newPlanForm = new FormGroup({
     uid: new FormControl('', Validators.required),
@@ -21,7 +21,6 @@ export class NewPlanComponent implements OnInit {
     descripcion: new FormControl(''),
   });
 
-  ngOnInit() {}
 
   addNewPlan(data: PlanI) {
     this.planSvc.createPlan(data);

@@ -1,14 +1,14 @@
-import { Component,Inject, LOCALE_ID, OnInit, ViewChild } from '@angular/core';
+import { Component,Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { CitasOnlineService } from '../services/citas-online.service';
 import { formatDate } from '@angular/common';
-import { Observable } from 'rxjs';
+
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 import { CitaI } from '../shared/models/citas.interface';
 import { ClienteI } from '../shared/models/cliente.interface';
 
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
-import { UserI } from '../shared/models/user.interface';
+
 import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-citas-online',

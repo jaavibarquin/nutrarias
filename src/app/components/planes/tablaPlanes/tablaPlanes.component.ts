@@ -97,5 +97,5 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
       console.log(`Dialog Result Planes ${result}`);
     });
   }
-  onCloseAll() {}
+
 }

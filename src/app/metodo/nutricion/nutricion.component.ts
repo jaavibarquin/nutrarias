@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nutricion',
   templateUrl: './nutricion.component.html',
   styleUrls: ['./nutricion.component.css']
 })
-export class NutricionComponent implements OnInit {
+export class NutricionComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  
 
 }

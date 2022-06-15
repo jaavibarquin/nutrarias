@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PostI } from '../../../shared/models/post.interface';
 import { PostService } from '../../../services/post.service';
@@ -7,7 +7,7 @@ import { PostService } from '../../../services/post.service';
   templateUrl: './new-post.component.html',
   styleUrls: ['./new-post.component.css'],
 })
-export class NewPostComponent implements OnInit {
+export class NewPostComponent {
   private image: any;
   constructor(private postSvc: PostService) {}
   public newPostForm = new FormGroup({
@@ -19,7 +19,6 @@ export class NewPostComponent implements OnInit {
     datePost: new FormControl('', Validators.required),
   });
 
-  ngOnInit() {}
 
   addNewPost(data: PostI) {
     this.postSvc.preAddandUpdate(data, this.image);

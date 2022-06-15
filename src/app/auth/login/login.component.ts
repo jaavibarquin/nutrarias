@@ -9,7 +9,7 @@ import { UserI } from 'src/app/shared/models/user.interface';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private authSvc: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
 
   async onLogin() {
     const { email, password } = this.loginForm.value;

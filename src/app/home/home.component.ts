@@ -1,4 +1,4 @@
-import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
@@ -8,14 +8,14 @@ import { ViewportScroller } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
   constructor(
     private authSvc: AuthService,
     private router: Router,
     private viewportScroller: ViewportScroller
   ) {}
 
-  ngOnInit(): void {}
+
 
   public onClick(elementID: string): void {
     this.viewportScroller.scrollToAnchor(elementID);
