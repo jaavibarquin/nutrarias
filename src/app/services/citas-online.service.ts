@@ -7,7 +7,8 @@ import { CitaI } from '../shared/models/citas.interface';
 export class CitasOnlineService
 {
   basePath: string | null;
-  obvs: Observable<CitaI[]>;
+  listaCitas: Observable<CitaI[]>;
+  citaPut: Observable<any>;
   path: string | null;
 
   constructor(private httpclient: HttpClient) {
@@ -21,30 +22,40 @@ export class CitasOnlineService
   } : { };
     if (area == "ENTR" || area == "PSIC" || area == "NUTR") {
       try {
-        this.obvs = this.httpclient.get<CitaI[]>(this.path, options);
+        this.listaCitas = this.httpclient.get<CitaI[]>(this.path, options);
       }
       catch (error) {
 
         window.alert(error);
         window.alert('Error: ' + error.message);
-        this.obvs = null;
+        this.listaCitas = null;
       }
-      return this.obvs;
+      return this.listaCitas;
     } else {
       return null;
     }
   }
 
+  putCita(cita: CitaI) : Observable<CitaI> {
+    if (cita != null) {
+      // let body = JSON.stringify(cita);
+      // console.log(body);
+      this.path = this.basePath.concat(`/citas/${cita.area}/${cita.fecha}/${cita.hora}`);
+      try {
+        this.citaPut = this.httpclient.put<CitaI>(this.path, cita);
+      }catch (error) {
+        window.alert(error);
+        window.alert('Error: ' + error.message);
+        this.citaPut = null;
+      }
+      return this.citaPut;
+    } else {
+      return null;
+    }
+  } 
+
   public getCita(area: string, dia: string, hora: string): Observable<CitaI> {
     this.path = this.basePath.concat(`/citas/${area}/${dia}/${hora}`);
     return this.httpclient.get<CitaI>(this.path);
   }
-
-  putCita(cita: CitaI) : Observable<any> {
-    if (cita != null) {
-      this.path = this.basePath.concat(`/citas/${cita.area}/${cita.fecha}/${cita.hora}`);
-      return this.httpclient.put(this.path, cita);
-    }
-    
-  } 
 }

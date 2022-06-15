@@ -26,7 +26,9 @@
         </button>
       </div>
     </mat-step>
-    <mat-step label="Selecciona una fecha">
+
+    <mat-step [stepControl]="fechaForm">
+      <ng-template matStepLabel>Selecciona una fecha</ng-template>
       <div class="row mt-3 mb-3">
         <div class="col mt-1 mb-2">
           <mat-card
@@ -70,8 +72,18 @@
           </div>
         </div>
       </div>
+      <p class="lead mt-3" *ngIf="citaSeleccionada">
+        Fecha seleccionada: el <b>{{ fechaNormalizada }}</b> a las
+        <b>{{ citaSeleccionada.hora }}</b
+        >.
+      </p>
       <div>
-        <button mat-stroked-button color="warn" matStepperPrevious>
+        <button
+          mat-stroked-button
+          color="warn"
+          (click)="onBorraCita()"
+          matStepperPrevious
+        >
           Atrás
         </button>
         <button class="ml-3" mat-raised-button color="primary" matStepperNext>
@@ -126,7 +138,12 @@
               required
           /></mat-form-field>
           <div>
-            <button mat-stroked-button color="warn" matStepperPrevious>
+            <button
+              mat-stroked-button
+              color="warn"
+              matStepperPrevious
+              (click)="onBorraCita()"
+            >
               Atrás
             </button>
             <button
@@ -142,27 +159,31 @@
         </form>
       </div>
     </mat-step>
+
     <mat-step>
       <ng-template matStepLabel>Hecho</ng-template>
-      <p class="lead" *ngIf="citaSeleccionada && cliente">
-        Perfecto! Ha reservado su cita para <b> {{ areaString }}</b> el dia
-        <b>{{ fechaNormalizada }}</b> a las <b>{{ citaSeleccionada.hora }}</b
-        >.
-      </p>
-      <div>
-        <button mat-stroked-button color="warn" matStepperPrevious>
-          Atrás
-        </button>
+      <div *ngIf="citaRealizada && cliente; else reservando">
+        <p class="lead">
+          ¡Perfecto! Ha reservado su cita para <b> {{ areaString }}</b> el dia
+          <b>{{ fechaNormalizada }}</b> a las <b>{{ citaRealizada.hora }}</b
+          >.
+          <br />
+          Le hemos enviado un correo con su cita a <b>{{ cliente.email }}</b
+          >, si no lo encuentra, compruebe su bandeja de spam.
+        </p>
+        <div>
+          <a href="/home" mat-stroked-button color="primary" class="ml-3"
+            >Hecho</a
+          >
+        </div>
       </div>
+      <ng-template #reservando>
+        <div class="container-spinner">
+          <mat-spinner></mat-spinner>
+          <br />
+        </div>
+        <p class="lead text-center">Un momento, su cita se está reservando.</p>
+      </ng-template>
     </mat-step>
   </mat-vertical-stepper>
-  <p>AREA: {{ area }}</p>
-  <p>FECHA: {{ fechaSeleccionada }}</p>
-  <div *ngIf="citaSeleccionada && cliente">
-    <p>HORA: {{ citaSeleccionada.idcita }}</p>
-    <p>CLIENTE: {{ cliente.email }}</p>
-  </div>
-  <div *ngIf="areaString">
-    <p>AREA: {{ areaString }}</p>
-  </div>
 </div>

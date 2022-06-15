@@ -122,4 +122,8 @@ export class AuthService extends RoleValidator {
     };
     return userRef.set(data, { merge: true });
   }
+
+  public getActiveUser(): Observable<UserI> {
+    return this.afAuth.authState;
+  }
 }
