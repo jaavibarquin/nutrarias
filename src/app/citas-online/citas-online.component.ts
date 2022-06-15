@@ -98,9 +98,9 @@ export class CitasOnlineComponent implements OnInit {
     else return false;
   }
 
-  onReservaCita(data: ClienteI) {
+  onReservaCita(cliente: ClienteI) {
     if (this.clienteForm.valid) {
-      this.cliente = data;
+      this.cliente = cliente;
       this.citaSeleccionada.cliente = this.cliente;
       this.citasOnlineSvc.putCita(this.citaSeleccionada).subscribe(
         data => {
