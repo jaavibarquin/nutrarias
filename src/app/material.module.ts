@@ -47,4 +47,4 @@ const myModule = [
   imports: [CommonModule, myModule],
   exports: [myModule],
 })
-export class MaterialModule {}
+export class MaterialModule { }

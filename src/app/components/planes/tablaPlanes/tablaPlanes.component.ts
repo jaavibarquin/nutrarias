@@ -29,7 +29,7 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private planSvc: PlanService, public dialog: MatDialog) {}
+  constructor(private planSvc: PlanService, public dialog: MatDialog) { }
   ngOnInit() {
     this.planSvc
       .getAllPlanes()
@@ -69,7 +69,7 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
             Swal.fire(
               '¡Error!',
               'El plan no se ha podido eliminar correctamente, vuelve a intentarlo. \n' +
-                error,
+              error,
               'error'
             );
           });
@@ -94,7 +94,6 @@ export class TablaPlanesComponent implements AfterViewInit, OnInit {
 
     const dialogRef = this.dialog.open(ModalPlanesComponent, config);
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog Result Planes ${result}`);
     });
   }
 

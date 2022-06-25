@@ -1,4 +1,4 @@
-import { Component,Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { CitasOnlineService } from '../services/citas-online.service';
 import { formatDate } from '@angular/common';
 
@@ -9,24 +9,23 @@ import { ClienteI } from '../shared/models/cliente.interface';
 
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
-import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-citas-online',
   templateUrl: './citas-online.component.html',
   styleUrls: ['./citas-online.component.css'],
   providers: [
     {
-    provide: STEPPER_GLOBAL_OPTIONS, useValue: { showError: true },
+      provide: STEPPER_GLOBAL_OPTIONS, useValue: { showError: true },
     },
   ],
 })
-  
+
 export class CitasOnlineComponent implements OnInit {
   clienteForm: FormGroup;
   fechaForm: FormGroup;
   isHoraSeleccionada: boolean = false;
-  minDate: Date | null; 
-  maxDate: Date | null; 
+  minDate: Date | null;
+  maxDate: Date | null;
 
   dateSelected: Date | null;
   previousDateSelected: Date | null;
@@ -41,20 +40,20 @@ export class CitasOnlineComponent implements OnInit {
   citaRealizada: CitaI | null;
 
 
-  constructor(@Inject(LOCALE_ID) private locale: string, private citasOnlineSvc: CitasOnlineService, private formBuilder: FormBuilder, private authSvc: AuthService) { 
+  constructor(@Inject(LOCALE_ID) private locale: string, private citasOnlineSvc: CitasOnlineService, private formBuilder: FormBuilder) {
     this.minDate = new Date();
     this.maxDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth() + 3, this.minDate.getDate());
-    this.area = "NUTR";
+    this.area = "XXXX";
   }
-  
+
 
 
   ngOnInit(): void {
     this.clienteForm = this.formBuilder.group({
-        nombre: ['', Validators.required],
-        apellidos: ['', Validators.required],
-        telefono: ['', [Validators.required, Validators.pattern('(6|7)*([0-9]*){8}')]],
-        email: ['', [Validators.required, Validators.email]]
+      nombre: ['', Validators.required],
+      apellidos: ['', Validators.required],
+      telefono: ['', [Validators.required, Validators.pattern('(6|7)*([0-9]*){8}')]],
+      email: ['', [Validators.required, Validators.email]]
     });
     this.fechaForm = new FormGroup({
       fecha: new FormControl('', Validators.required),
@@ -63,17 +62,17 @@ export class CitasOnlineComponent implements OnInit {
     this.listaCitas = [];
   }
   ngDoCheck(): void {
-    if (this.previousDateSelected != this.dateSelected && this.area!="XXXX") { 
+    if (this.previousDateSelected != this.dateSelected && this.area != "XXXX") {
       this.previousDateSelected = this.dateSelected;
       this.fechaSeleccionada = formatDate(this.dateSelected, "yyyy-MM-dd", this.locale);
       this.citasOnlineSvc.getCitasLibresDia(this.area, this.fechaSeleccionada)
         .subscribe(
           data => { this.listaCitas = data; });
-      
+
       this.fechaNormalizada = formatDate(this.dateSelected, "dd-MM-yyyy", this.locale);
       this.convierteArea(this.area);
     }
-    
+
   }
 
   getCita() {
@@ -113,7 +112,6 @@ export class CitasOnlineComponent implements OnInit {
   onBorraCita(): void {
     this.citaSeleccionada = null;
     this.fechaForm.setValue({ fecha: null, hora: null });
-    console.log(this.fechaForm.value);
   }
 
   convierteArea(area: string) {

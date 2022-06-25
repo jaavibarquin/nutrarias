@@ -1,0 +1,152 @@
+<div class="col">
+  <div class="card mb-4" id="citasDia">
+    <div class="card-body">
+      <p class="card-text lead">Busca las citas para el día</p>
+      <mat-form-field appearance="fill">
+        <mat-label>ÁREA CITA</mat-label>
+        <mat-select [(ngModel)]="areaSeleccionada" name="area">
+          <mat-option>Ninguna Seleccionada</mat-option>
+          <mat-option *ngFor="let area of areas" [value]="area.value">{{
+            area.viewValue
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="row mt-3 mb-3">
+        <div class="mt-1 mb-2">
+          <mat-card
+            class="calendar-card;"
+            style="min-width: 30vh; max-width: 40vh"
+          >
+            <mat-calendar [(selected)]="dateSelected"></mat-calendar>
+          </mat-card>
+        </div>
+        <div class="">
+          <div
+            class="card mt-1 mb-2"
+            style="min-width: 100vh; width: 100%; display: block"
+          >
+            <h4 class="card-header text-center">
+              Citas para {{ areaSeleccionada }} el día <br />
+              {{ fechaNormalizada }}
+            </h4>
+            <div class="card-body">
+              <div class="mat-elevation-z8">
+                <div class="mb-2 ml-2">
+                  <button
+                    mat-button
+                    (click)="onBuscaCitasAyer()"
+                    class="btn btn-outline-warning mt-2 mr-2"
+                  >
+                    <mat-icon>skip_previous</mat-icon> &nbsp; Ayer
+                  </button>
+                  <button
+                    mat-button
+                    (click)="onBuscaCitasHoy()"
+                    class="btn btn-primary mt-2 mr-2"
+                  >
+                    <mat-icon>today</mat-icon> &nbsp; Hoy
+                  </button>
+                  <button
+                    mat-button
+                    (click)="onBuscaCitasManana()"
+                    class="btn btn-outline-success mt-2 mr-2"
+                  >
+                    <mat-icon>skip_next</mat-icon> &nbsp; Mañana
+                  </button>
+                  <button
+                    mat-button
+                    (click)="onBuscaTodasCitas()"
+                    class="btn btn-danger mt-2 mr-2"
+                  >
+                    <mat-icon>storage</mat-icon> &nbsp; Todas
+                  </button>
+                </div>
+                <table
+                  mat-table
+                  [dataSource]="dataSource"
+                  class="mat-elevation-z8"
+                >
+                  <caption>
+                    Tabla Admin Citas
+                  </caption>
+                  <ng-container matColumnDef="fechaCita">
+                    <th mat-header-cell *matHeaderCellDef mat-header>Fecha</th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.fullfecha | date: format }}
+                    </td>
+                  </ng-container>
+
+                  <!-- Nombre -->
+                  <ng-container matColumnDef="nombreCita">
+                    <th mat-header-cell *matHeaderCellDef mat-header>Nombre</th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.cliente.nombre }}
+                    </td>
+                  </ng-container>
+
+                  <!-- Apellidos Column -->
+                  <ng-container matColumnDef="apellidosCita">
+                    <th mat-header-cell *matHeaderCellDef mat-header>
+                      Apellidos
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.cliente.apellidos }}
+                    </td>
+                  </ng-container>
+                  <!-- Telefono Column -->
+                  <ng-container matColumnDef="telefonoCita">
+                    <th mat-header-cell *matHeaderCellDef mat-header>
+                      Teléfono
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.cliente.telefono }}
+                    </td>
+                  </ng-container>
+                  <!-- Email Column -->
+                  <ng-container matColumnDef="emailCita">
+                    <th mat-header-cell *matHeaderCellDef mat-header>Email</th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.cliente.email }}
+                    </td>
+                  </ng-container>
+                  <!-- Accions Column -->
+                  <ng-container matColumnDef="acciones">
+                    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+                    <td mat-cell *matCellDef="let element">
+                      <a
+                        mat-stroked-button
+                        color="primary"
+                        href="tel:{{ element.cliente.telefono }}"
+                      >
+                        <mat-icon>call</mat-icon>
+                        Llamar
+                      </a>
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr
+                    mat-row
+                    *matRowDef="let row; columns: displayedColumns"
+                  ></tr>
+
+                  <!-- Cuando no hay ninguna fila que coincida con el filtro -->
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">
+                      No hay citas que coincidan con esa fecha.
+                    </td>
+                  </tr>
+                </table>
+                <mat-paginator
+                  [pageSizeOptions]="[5, 10, 20]"
+                  showFirstLastButtons
+                >
+                </mat-paginator>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
