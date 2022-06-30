@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PlanService } from 'src/app/components/planes/plan.service';
+import { PlanService } from 'src/app/services/plan.service';
 import { PlanI } from 'src/app/shared/models/planes.interface';
 
 @Component({
@@ -21,5 +21,5 @@ export class AdminComponent {
     descripcion: new FormControl(''),
   });
 
-  constructor(private router: Router, private planSvc: PlanService) {}
+  constructor(private router: Router, private planSvc: PlanService) { }
 }

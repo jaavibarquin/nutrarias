@@ -5,7 +5,7 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { PlanService } from 'src/app/components/planes/plan.service';
+import { PlanService } from '../services/plan.service';
 import { PlanI } from 'src/app/shared/models/planes.interface';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 export class PlanesComponent implements OnInit {
   stripePromise = loadStripe(environment.stripe_key);
   public planes$: Observable<PlanI[]>;
-  constructor(private planSvc: PlanService, private router: Router) {}
+  constructor(private planSvc: PlanService, private router: Router) { }
 
   ngOnInit() {
     this.planes$ = this.planSvc.getAllPlanes();

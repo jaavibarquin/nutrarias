@@ -6,10 +6,10 @@ import {
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Observable, of } from 'rxjs';
-import { UserI } from '../../shared/models/user.interface';
+import { UserI } from '../shared/models/user.interface';
 import { switchMap, map } from 'rxjs/operators';
-import { RoleValidator } from '../../auth/helpers/roleValidator';
-import { PlanI } from '../../shared/models/planes.interface';
+import { RoleValidator } from '../auth/helpers/roleValidator';
+import { PlanI } from '../shared/models/planes.interface';
 @Injectable({ providedIn: 'root' })
 export class PlanService extends RoleValidator {
   public user$: Observable<UserI>;

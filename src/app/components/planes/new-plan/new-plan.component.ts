@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlanI } from '../../../shared/models/planes.interface';
-import { PlanService } from '../plan.service';
+import { PlanService } from '../../../services/plan.service';
 
 @Component({
   selector: 'app-new-plan',
@@ -9,7 +9,7 @@ import { PlanService } from '../plan.service';
   styleUrls: ['./new-plan.component.css'],
 })
 export class NewPlanComponent {
-  constructor(private planSvc: PlanService) {}
+  constructor(private planSvc: PlanService) { }
   public newPlanForm = new FormGroup({
     uid: new FormControl('', Validators.required),
     priceId: new FormControl('', Validators.required),

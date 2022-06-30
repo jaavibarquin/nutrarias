@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
 import { PlanI } from '../../../shared/models/planes.interface';
-import { PlanService } from '../plan.service';
+import { PlanService } from '../../../services/plan.service';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalPlanesComponent } from '../../../shared/modalPlanes/modalPlanes.component';

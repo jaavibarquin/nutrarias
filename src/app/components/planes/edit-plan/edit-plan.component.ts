@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PlanI } from '../../../shared/models/planes.interface';
-import { PlanService } from '../plan.service';
+import { PlanService } from '../../../services/plan.service';
 
 @Component({
   selector: 'app-edit-plan',
@@ -10,7 +10,7 @@ import { PlanService } from '../plan.service';
 })
 export class EditPlanComponent implements OnInit {
   @Input() plan: PlanI;
-  constructor(private planSvc: PlanService) {}
+  constructor(private planSvc: PlanService) { }
 
   public editPlanForm = new FormGroup({
     uid: new FormControl('', Validators.required),
