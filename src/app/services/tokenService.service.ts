@@ -15,7 +15,7 @@ export class TokenService {
   basePath: string | null;
 
   constructor(private httpclient: HttpClient) {
-    this.basePath = `http://localhost:8080/auth/getToken`;
+    this.basePath = `http://localhost:8080/nutrarias/auth/token`;
   }
 
   public getToken(): string {
